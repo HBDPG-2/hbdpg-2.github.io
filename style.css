@@ -1,5 +1,10 @@
 body {
     background-color: black;
+
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 header {
@@ -7,15 +12,27 @@ header {
     left: 0;
     right: 0;
     top: 0;
-    height: 70px;
+    height: 80px;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
 }
 
+#Logo {
+    height: 100px;
+    display: block;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 main {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 #ComingSoon {

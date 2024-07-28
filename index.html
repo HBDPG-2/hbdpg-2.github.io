@@ -15,13 +15,27 @@
         <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
         <link rel="shortcut icon" href="assets/icons/favicon-128x128.ico" type="image/vnd.microsoft.icon"/>
 
+        <script src="script.js"></script>
+
     </head>
     <body>
         <header>
-            <div id="Copyright" style="padding-top: 25px;">Logo here</div>
+            <img id="Logo" src="assets/Logo.png" alt="Logo">
         </header>
 
         <main>
+            <div>
+                <b style="color: white;">Passphrase 1:</b><br>
+                <input type="password" class="inputs" id="passphrase1" required minlength="4" autocomplete="off" style="font-size: 18pt;"><br>
+                <button id="next" onclick="next()" style="font-size: 15px">Next</button>
+            </div>
+
+            <div>
+                <b style="color: white;">Passphrase 2:</b><br>
+                <input type="text" class="inputs" id="passphrase2" required="true" autocomplete="" style="font-size: 18pt;" disabled><br>
+                <b style="color: white;">Use different passphrases!</b><br>
+            </div>
+
             <img id="ComingSoon" src="assets/ComingSoon.png" alt="Coming soon...">
         </main>
 
