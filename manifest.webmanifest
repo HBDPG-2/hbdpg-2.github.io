@@ -1,49 +1,95 @@
 {
     "name": "HBDPG-2",
     "short_name": "HBDPG-2",
+    "description": "Open-source cross-platform deterministic password generator",
+    "id": "https://piotr-kniaz.github.io/HBDPG-2/",
+    "start_url": "https://piotr-kniaz.github.io/HBDPG-2/",
+    "scope": "https://piotr-kniaz.github.io/HBDPG-2/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientatnion": "any",
     "icons": [
     {
-        "src": "assets/icons/icon-1024.png",
-        "sizes": "1024x1024",
-        "type": "image/png"
-    }, {
         "src": "assets/icons/icon-512.png",
         "sizes": "512x512",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-256.png",
         "sizes": "256x256",
         "type": "image/png"
     }, {
+        "src": "assets/icons/maskable-icon-256.png",
+        "sizes": "256x256",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "assets/icons/icon-192.png",
         "sizes": "192x192",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-180.png",
         "sizes": "180x180",
         "type": "image/png"
     }, {
+        "src": "assets/icons/maskable-icon-180.png",
+        "sizes": "180x180",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "assets/icons/icon-152.png",
         "sizes": "152x152",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-152.png",
+        "sizes": "152x152",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-144.png",
         "sizes": "144x144",
         "type": "image/png"
     }, {
+        "src": "assets/icons/maskable-icon-144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "assets/icons/icon-128.png",
         "sizes": "128x128",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-128.png",
+        "sizes": "128x128",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-72.png",
         "sizes": "72x72",
         "type": "image/png"
     }, {
+        "src": "assets/icons/maskable-icon-72.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "assets/icons/icon-64.png",
         "sizes": "64x64",
         "type": "image/png"
-    }],
-    "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000"
+    }, {
+        "src": "assets/icons/maskable-icon-64.png",
+        "sizes": "64x64",
+        "type": "image/png",
+        "purpose": "maskable"
+    }]
 }
