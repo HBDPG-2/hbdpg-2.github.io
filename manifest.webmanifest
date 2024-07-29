@@ -4,9 +4,11 @@
     "description": "Open-source cross-platform deterministic password generator",
     "id": "https://piotr-kniaz.github.io/HBDPG-2/",
     "start_url": "https://piotr-kniaz.github.io/HBDPG-2/",
+    "scope": "https://piotr-kniaz.github.io/HBDPG-2/",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
+    "orientatnion": "any",
     "icons": [
     {
         "src": "assets/icons/icon-1024.png",
