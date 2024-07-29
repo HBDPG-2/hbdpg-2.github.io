@@ -11,10 +11,6 @@
     "orientatnion": "any",
     "icons": [
     {
-        "src": "assets/icons/icon-1024.png",
-        "sizes": "1024x1024",
-        "type": "image/png"
-    }, {
         "src": "assets/icons/icon-512.png",
         "sizes": "512x512",
         "type": "image/png"
@@ -27,6 +23,11 @@
         "src": "assets/icons/icon-256.png",
         "sizes": "256x256",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-256.png",
+        "sizes": "256x256",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-192.png",
         "sizes": "192x192",
@@ -41,9 +42,19 @@
         "sizes": "180x180",
         "type": "image/png"
     }, {
+        "src": "assets/icons/maskable-icon-180.png",
+        "sizes": "180x180",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "assets/icons/icon-152.png",
         "sizes": "152x152",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-152.png",
+        "sizes": "152x152",
+        "type": "image/png",
+        "purpose": "maskable"
     }, {
         "src": "assets/icons/icon-144.png",
         "sizes": "144x144",
@@ -75,5 +86,10 @@
         "src": "assets/icons/icon-64.png",
         "sizes": "64x64",
         "type": "image/png"
+    }, {
+        "src": "assets/icons/maskable-icon-64.png",
+        "sizes": "64x64",
+        "type": "image/png",
+        "purpose": "maskable"
     }]
 }
