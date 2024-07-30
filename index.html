@@ -9,7 +9,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
@@ -32,17 +32,18 @@
         </header>
 
         <main>
-            <div>
+            <form id="passphrase1Form" action="">
                 <strong>Passphrase 1:</strong><br>
-                <input type="password" class="inputs" id="passphrase1" required minlength="8" autocomplete="off" onkeydown="form1(this)" style="font-size: 18pt;" autofocus><br>
-                <button id="next" value="Next" onclick="next()" style="font-size: 16px">Next</button>
-            </div>
+                <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" style="font-size: 18pt;" autofocus><br>
+                <button id="nextButton" class="buttons" value="Next" style="font-size: 16px">Next</button>
+            </form>
 
-            <div style="padding-top: 150px;">
+            <form id="passphrase2Form" action="" style="padding-top: 150px;">
                 <strong>Passphrase 2:</strong><br>
-                <input type="text" class="inputs" id="passphrase2" required minlength="8" autocomplete="" style="font-size: 18pt;" disabled><br>
+                <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" style="font-size: 18pt;" disabled><br>
+                <button id="confirmButton" class="buttons" value="Confirm" style="font-size: 16px" disabled>Confirm</button>
                 <p>Use different passphrases!</p><br>
-            </div>
+            </form>
 
             <img id="ComingSoon" src="assets/ComingSoon.webp" alt="Coming soon...">
         </main>
