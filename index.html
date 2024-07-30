@@ -28,23 +28,23 @@
     </head>
     <body>
         <header>
-            <img id="Logo" src="assets/Logo.png" alt="Logo">
+            <img id="Logo" src="assets/Logo.webp" alt="Logo">
         </header>
 
         <main>
             <div>
-                <b style="color: white;">Passphrase 1:</b><br>
-                <input type="password" class="inputs" id="passphrase1" required minlength="4" autocomplete="off" style="font-size: 18pt;"><br>
-                <button id="next" onclick="next()" style="font-size: 15px">Next</button>
+                <strong>Passphrase 1:</strong><br>
+                <input type="password" class="inputs" id="passphrase1" required minlength="8" autocomplete="off" onkeydown="form1(this)" style="font-size: 18pt;" autofocus><br>
+                <button id="next" value="Next" onclick="next()" style="font-size: 16px">Next</button>
             </div>
 
-            <div>
-                <b style="color: white;">Passphrase 2:</b><br>
-                <input type="text" class="inputs" id="passphrase2" required="true" autocomplete="" style="font-size: 18pt;" disabled><br>
-                <b style="color: white;">Use different passphrases!</b><br>
+            <div style="padding-top: 150px;">
+                <strong>Passphrase 2:</strong><br>
+                <input type="text" class="inputs" id="passphrase2" required minlength="8" autocomplete="" style="font-size: 18pt;" disabled><br>
+                <p>Use different passphrases!</p><br>
             </div>
 
-            <img id="ComingSoon" src="assets/ComingSoon.png" alt="Coming soon...">
+            <img id="ComingSoon" src="assets/ComingSoon.webp" alt="Coming soon...">
         </main>
 
         <footer>
@@ -53,6 +53,5 @@
                 <a id="GitHubLink" href="https://github.com/Piotr-Kniaz/HBDPG-2" target="_blank">GitHub</a>
             </div>
         </footer>
-        
     </body>
 </html>

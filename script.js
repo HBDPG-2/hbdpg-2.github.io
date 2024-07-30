@@ -1,9 +1,21 @@
-function next() {
-    // validation
+function form1(element) {
+    if(event.key === 'Enter') {
+        next();
+    }
+}
 
-    document.getElementById('next').setAttribute('disabled', 'disabled');
-    document.getElementById('passphrase1').setAttribute('disabled', 'disabled');
-    let elem = document.getElementById('passphrase2');
-    elem.removeAttribute('disabled');
-    elem.type = 'password';
+function next() {
+    let passphrase1input = document.getElementById('passphrase1');
+    let passphrase2input = document.getElementById('passphrase2');
+
+    if (passphrase1input.value.length >= 8) {
+        document.getElementById('next').setAttribute('disabled', 'disabled');
+        passphrase1input.setAttribute('disabled', 'disabled');
+    
+        passphrase2input.removeAttribute('disabled');
+        passphrase2input.type = 'password';
+        passphrase2input.focus();
+    } else {
+        alert('Use at least 8 characters');
+    }
 }
