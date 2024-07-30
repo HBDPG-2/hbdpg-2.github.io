@@ -13,7 +13,7 @@
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
-        <title>HBDPG-2: Coming soon...</title>
+        <title>HBDPG-2: Deterministic password generaror</title>
         <link rel="manifest" href="manifest.webmanifest">
         <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/apple-touch-icon-512.png">
         <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/apple-touch-icon-192.png">
@@ -32,18 +32,30 @@
         </header>
 
         <main>
-            <form id="passphrase1Form" action="">
-                <strong>Passphrase 1:</strong><br>
-                <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" style="font-size: 18pt;" autofocus><br>
-                <button id="nextButton" class="buttons" value="Next" style="font-size: 16px">Next</button>
-            </form>
+            <div>
+                <form id="passphrase1Form" action="">
+                    <strong>Passphrase 1:</strong><br>
+                    <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" style="font-size: 18pt;" autofocus><br>
+                    <button id="nextButton" class="buttons">Next</button>
+                </form>
 
-            <form id="passphrase2Form" action="" style="padding-top: 150px;">
-                <strong>Passphrase 2:</strong><br>
-                <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" style="font-size: 18pt;" disabled><br>
-                <button id="confirmButton" class="buttons" value="Confirm" style="font-size: 16px" disabled>Confirm</button>
-                <p>Use different passphrases!</p><br>
-            </form>
+                <form id="passphrase2Form" action="" style="padding-top: 150px;">
+                    <strong>Passphrase 2:</strong><br>
+                    <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" style="font-size: 18pt;" disabled><br>
+                    <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
+                    <p>Use different passphrases!</p><br>
+                </form>
+            </div>
+
+            <div style="border: solid white;">
+                <strong>Advanced features</strong>
+            </div>
+
+            <div>
+                <button id="generateButton" class="buttons" onclick="console.log('hello')" disabled>Generate</button>
+                <button id="copyButton" class="buttons" disabled>Copy</button>
+                <button id="clearButton" class="buttons">Clear</button>
+            </div>
 
             <img id="ComingSoon" src="assets/ComingSoon.webp" alt="Coming soon...">
         </main>

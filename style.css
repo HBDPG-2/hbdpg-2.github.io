@@ -50,6 +50,10 @@ main {
     user-select: none;
 }
 
+.buttons {
+    font-size: 16px;
+}
+
 footer {
     position: absolute;
     left: 0;

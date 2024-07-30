@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const passphrase2Input = document.getElementById('passphrase2Input');
     const nextButton = document.getElementById('nextButton');
     const confirmButton = document.getElementById('confirmButton');
+    const generateButton = document.getElementById('generateButton');
 
     form1.removeAttribute('action');
     form2.removeAttribute('action');
@@ -28,25 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (passphrase1Input.value != passphrase2Input.value) {
             passphrase2Input.setAttribute('disabled', 'disabled');
             confirmButton.setAttribute('disabled', 'disabled');
+
+            generateButton.removeAttribute('disabled');
+            generateButton.focus();
         } else {
             alert('Passphrases must be different!');
             passphrase2Input.focus();
         }
     });
 });
-
-function next() {
-    let passphrase1Input = document.getElementById('passphrase1Input');
-    let passphrase2Input = document.getElementById('passphrase2Input');
-
-    if (passphrase1input.value.length >= 8) {
-        document.getElementById('next').setAttribute('disabled', 'disabled');
-        passphrase1input.setAttribute('disabled', 'disabled');
-    
-        passphrase2input.removeAttribute('disabled');
-        passphrase2input.type = 'password';
-        passphrase2input.focus();
-    } else {
-        alert('Use at least 8 characters');
-    }
-}
