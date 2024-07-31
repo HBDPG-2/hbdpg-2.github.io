@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.getElementById('nextButton');
     const confirmButton = document.getElementById('confirmButton');
     const generateButton = document.getElementById('generateButton');
+    const copyButton = document.getElementById('copyButton');
+    const result = document.getElementById('result');
 
     form1.removeAttribute('action');
     form2.removeAttribute('action');
@@ -38,3 +40,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function hashnow() {
+    generateButton.setAttribute('disabled', 'disabled');
+    // generate button loading...
+
+    argon2
+        .hash({
+            pass: passphrase1Input.value,
+            salt: passphrase2Input.value,
+            time: 1,
+            mem: 1024,
+            hashLen: 32,
+            parallelism: 1,
+            type: argon2.ArgonType.Argon2id
+        })
+        .then(hash => {
+        //    document.querySelector('pre').innerText =
+        //        `Encoded: ${hash.encoded}\n` +
+        //        `Hex: ${hash.hashHex}\n`;
+            result.setAttribute('value', hash.hashHex);
+            copyButton.removeAttribute('disabled');
+        })
+        .catch(e => console.error('Error: ', e));
+}

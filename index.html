@@ -24,6 +24,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon-128.ico">
 
         <script src="scripts/script.js"></script>
+        <script src="scripts/sha512.js"></script>
+        <script src="scripts/argon2.js"></script>
     </head>
     <body>
         <header>
@@ -52,11 +54,11 @@
 
             <div>
                 <strong>Result</strong><br>
-                <input id="result" class="inputs" type="password" disabled>
+                <input id="result" class="inputs" type="text" disabled>
             </div>
 
             <div>
-                <button id="generateButton" class="buttons" onclick="console.log('hello')" disabled>Generate</button>
+                <button id="generateButton" class="buttons" onclick="hashnow()" disabled>Generate</button>
                 <button id="copyButton" class="buttons" disabled>Copy</button>
                 <button id="clearButton" class="buttons">Clear</button>
             </div>
