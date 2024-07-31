@@ -8,47 +8,51 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
         <title>HBDPG-2: Deterministic password generaror</title>
         <link rel="manifest" href="manifest.webmanifest">
-        <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/apple-touch-icon-512.png">
-        <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/apple-touch-icon-192.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon" sizes="128x128" href="assets/icons/apple-touch-icon-128.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-touch-icon-72.png">
-        <link rel="icon" type="image/png" href="assets/icons/icon-128.png">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon-128.ico">
+        <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="images/icons/apple-touch-icon-192.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="images/icons/apple-touch-icon-128.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72.png">
+        <link rel="icon" type="image/png" href="images/icons/icon-128.png">
+        <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon-128.ico">
 
-        <script src="script.js"></script>
-
+        <script src="scripts/script.js"></script>
     </head>
     <body>
         <header>
-            <img id="Logo" src="assets/Logo.webp" alt="Logo">
+            <img id="Logo" src="images/Logo.webp" alt="Logo">
         </header>
 
         <main>
             <div>
                 <form id="passphrase1Form" action="">
                     <strong>Passphrase 1:</strong><br>
-                    <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" style="font-size: 18pt;" autofocus><br>
+                    <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
                     <button id="nextButton" class="buttons">Next</button>
                 </form>
 
-                <form id="passphrase2Form" action="" style="padding-top: 150px;">
+                <form id="passphrase2Form" action="" style="padding-top: 50px;">
                     <strong>Passphrase 2:</strong><br>
-                    <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" style="font-size: 18pt;" disabled><br>
+                    <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
                     <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
                     <p>Use different passphrases!</p><br>
                 </form>
             </div>
 
-            <div style="border: solid white;">
+            <div style="border: solid white; height: 50px;">
                 <strong>Advanced features</strong>
+            </div>
+
+            <div>
+                <strong>Result</strong><br>
+                <input id="result" class="inputs" type="password" disabled>
             </div>
 
             <div>
@@ -57,7 +61,7 @@
                 <button id="clearButton" class="buttons">Clear</button>
             </div>
 
-            <img id="ComingSoon" src="assets/ComingSoon.webp" alt="Coming soon...">
+            <img id="ComingSoon" src="images/ComingSoon.webp" alt="Coming soon...">
         </main>
 
         <footer>

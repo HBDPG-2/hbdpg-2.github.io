@@ -37,6 +37,10 @@ main {
     padding-top: 80px;
 }
 
+.inputs {
+    font-size: 18pt;
+}
+
 #ComingSoon {
     width: 100%;
     max-width: 800px;
