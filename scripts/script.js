@@ -48,11 +48,13 @@ function hashnow() {
     argon2
         .hash({
             pass: passphrase1Input.value,
-            salt: passphrase2Input.value,
-            time: 1,
-            mem: 1024,
+            salt: sha512(passphrase1Input.value),
+            secret: passphrase2Input.value,
+            ad: sha512(passphrase1Input.value),
+            time: 48,
+            mem: 256000,
             hashLen: 32,
-            parallelism: 1,
+            parallelism: 24,
             type: argon2.ArgonType.Argon2id
         })
         .then(hash => {
