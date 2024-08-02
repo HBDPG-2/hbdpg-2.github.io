@@ -27,6 +27,7 @@
         <script src="scripts/sha512.js"></script>
         <script src="scripts/argon2.js"></script>
     </head>
+
     <body>
         <header>
             <img id="Logo" src="images/Logo.webp" alt="Logo">
@@ -34,30 +35,31 @@
 
         <main>
             <div>
-                <form id="passphrase1Form" action="">
+                <form id="passphrase1Form" class="blocks" action="">
                     <strong>Passphrase 1:</strong><br>
                     <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
                     <button id="nextButton" class="buttons">Next</button>
                 </form>
 
-                <form id="passphrase2Form" action="" style="padding-top: 50px;">
+                <form id="passphrase2Form" class="blocks" action="">
                     <strong>Passphrase 2:</strong><br>
                     <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
                     <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
-                    <p>Use different passphrases!</p><br>
+                    <p>Use different passphrases!</p>
                 </form>
             </div>
 
-            <div style="border: solid white; height: 50px;">
+            <div class="blocks">
                 <strong>Advanced features</strong>
+                <p>Coming soon...</p>
             </div>
 
-            <div>
+            <div class="blocks">
                 <strong>Result</strong><br>
-                <input id="result" class="inputs" type="text" disabled>
+                <input id="result" class="inputs" type="password" disabled value="yourPassword1234">
             </div>
 
-            <div>
+            <div class="blocks">
                 <button id="generateButton" class="buttons" onclick="hashnow()" disabled>Generate</button>
                 <button id="copyButton" class="buttons" disabled>Copy</button>
                 <button id="clearButton" class="buttons">Clear</button>

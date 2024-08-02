@@ -4,9 +4,9 @@ body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 
-    -moz-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 header {
@@ -17,8 +17,8 @@ header {
     height: 80px;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.6);
-    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 
 #Logo {
@@ -28,17 +28,32 @@ header {
     margin-left: auto;
     margin-right: auto;
     pointer-events: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 main {
     padding-top: 80px;
 }
 
+.blocks {
+    background-color: #101010;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+}
+
 .inputs {
+    box-sizing: border-box;
+    width: 100%;
     font-size: 18pt;
+    border: 2px solid #202020;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#result {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
 #ComingSoon {
@@ -49,12 +64,10 @@ main {
     margin-left: auto;
     margin-right: auto;
     pointer-events: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 .buttons {
+    padding: 5px;
     font-size: 16px;
 }
 
@@ -62,6 +75,7 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
+    /* bottom: 0; */
     height: 80px;
 
     padding-top: 500px;
