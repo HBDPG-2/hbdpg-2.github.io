@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    color-scheme: dark;
 
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -16,9 +17,9 @@ header {
     top: 0;
     height: 80px;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 #Logo {
@@ -39,7 +40,19 @@ main {
     border: 2px solid #202020;
     border-radius: 15px;
     padding: 10px;
-    margin: 5px;
+    margin: 10px 5px 10px 5px;
+}
+
+.blockTitles {
+    font-size: 20pt;
+    display: inline-block;
+    padding-bottom: 10px;
+
+    background: linear-gradient(65deg, #b347e6, #81b5f9);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* border: solid; */
 }
 
 .inputs {
@@ -54,6 +67,11 @@ main {
 #result {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 #ComingSoon {
@@ -78,7 +96,7 @@ footer {
     /* bottom: 0; */
     height: 80px;
 
-    padding-top: 500px;
+    padding-top: 100px;
 }
 
 #Copyright {
