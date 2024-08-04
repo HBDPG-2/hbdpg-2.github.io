@@ -37,19 +37,21 @@
             <div class="blocks">
                 <strong class="blockTitles">Inputs</strong><br>
 
-                <span>Create and remember <u>two different</u> strong passphrases.</span>
+                <span>Create and remember <u>two different</u> strong passphrases.</span><br>
 
-                <form id="passphrase1Form" action="">
-                    <strong>Passphrase 1:</strong><br>
-                    <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
-                    <button id="nextButton" class="buttons">Next</button>
-                </form>
-
-                <form id="passphrase2Form" action="">
-                    <strong>Passphrase 2:</strong><br>
-                    <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
-                    <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
-                </form>
+                <div id="flexibleContainer">
+                    <form id="passphrase1Form" action="">
+                        <strong>Passphrase 1:</strong><br>
+                        <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
+                        <button id="nextButton" class="buttons">Next</button>
+                    </form>
+    
+                    <form id="passphrase2Form" action="">
+                        <strong>Passphrase 2:</strong><br>
+                        <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
+                        <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
+                    </form>
+                </div>
             </div>
 
             <div class="blocks">

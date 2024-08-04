@@ -51,8 +51,30 @@ main {
     background: linear-gradient(65deg, #b347e6, #81b5f9);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
 
-    /* border: solid; */
+#passphrase1Form {
+    margin-top: 10px;
+}
+
+#passphrase2Form {
+    margin-top: 10px;
+}
+
+@media (min-width: 900px) {
+    #flexibleContainer {
+        display: flex;
+    }
+
+    #passphrase1Form {
+        margin-right: 5px;
+        width: 50%;
+    }
+
+    #passphrase2Form {
+        padding-left: 5px;
+        width: 50%;
+    }
 }
 
 .inputs {
@@ -74,19 +96,17 @@ main {
     -moz-user-select: none;
 }
 
-#ComingSoon {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    padding-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    pointer-events: none;
-}
-
 .buttons {
-    padding: 5px;
+    margin: 0 auto;
+    display: block;
+
+    width: 100px;
+    height: 30px;
+
+    border-radius: 15px;
+
     font-size: 16px;
+    margin-top: 10px;
 }
 
 footer {
