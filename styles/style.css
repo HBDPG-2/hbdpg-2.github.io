@@ -18,8 +18,8 @@ header {
     height: 80px;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 
 #Logo {
@@ -78,12 +78,18 @@ main {
 }
 
 .inputs {
+    font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
     width: 100%;
     font-size: 18pt;
     border: 2px solid #202020;
     border-radius: 10px;
     padding: 5px;
+}
+
+.checkboxes {
+    margin-top: 10px;
+    accent-color: white;
 }
 
 #result {
@@ -126,7 +132,7 @@ footer {
 }
 
 #GitHubLink {
-    color: #9589F0;
+    color: #9589f0;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }

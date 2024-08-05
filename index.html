@@ -40,15 +40,19 @@
                 <span>Create and remember <u>two different</u> strong passphrases.</span><br>
 
                 <div id="flexibleContainer">
-                    <form id="passphrase1Form" action="">
+                    <form id="passphrase1Form">
                         <strong>Passphrase 1:</strong><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
+                        <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
+                        <label for="showPassphrase1Checkbox">Show passphrase</label>
                         <button id="nextButton" class="buttons">Next</button>
                     </form>
     
-                    <form id="passphrase2Form" action="">
+                    <form id="passphrase2Form">
                         <strong>Passphrase 2:</strong><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
+                        <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
+                        <label for="showPassphrase2Checkbox">Show passphrase</label>
                         <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
                     </form>
                 </div>
@@ -61,10 +65,12 @@
 
             <div class="blocks">
                 <strong class="blockTitles">Result</strong><br>
-                <input id="result" class="inputs" type="password" disabled value="yourPassword1234">
+                <input id="result" class="inputs" type="password" disabled>
+                <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
+                <label for="showPasswordCheckbox">Show password</label>
             </div>
 
-            <div class="blocks">
+            <div>
                 <button id="generateButton" class="buttons" onclick="hashnow()" disabled>Generate</button>
                 <button id="copyButton" class="buttons" disabled>Copy</button>
                 <button id="clearButton" class="buttons">Clear</button>
