@@ -39,7 +39,7 @@
 
                 <span>Create and remember <u>two different</u> strong passphrases.</span><br>
 
-                <div id="flexibleContainer">
+                <div class="flexibleContainers">
                     <form id="passphrase1Form">
                         <strong>Passphrase 1:</strong><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
@@ -47,7 +47,7 @@
                         <label for="showPassphrase1Checkbox">Show passphrase</label>
                         <button id="nextButton" class="buttons">Next</button>
                     </form>
-    <!-- pattern=".{8,}" -->
+
                     <form id="passphrase2Form">
                         <strong>Passphrase 2:</strong><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
@@ -70,10 +70,19 @@
                 <label for="showPasswordCheckbox">Show password</label>
             </div>
 
-            <div>
-                <button id="generateButton" class="buttons" onclick="hashnow()" disabled>Generate</button>
-                <button id="copyButton" class="buttons" disabled>Copy</button>
-                <button id="clearButton" class="buttons">Clear</button>
+            <div class="flexibleContainers">
+                <div class="buttonContainers" >
+                    <button id="generateButton" class="buttons mainButtons" onclick="hashnow()" disabled><b>Generate</b></button>
+                    <span id="generateNote">On some low-performance devices,<br>generation may take several minutes.</span>
+                </div>
+                <div class="buttonContainers">
+                    <button id="copyButton" class="buttons mainButtons" disabled>Copy</button>
+                    <span id="copyNote">Password copied to clipboard</span>
+                </div>
+                <div class="buttonContainers">
+                    <button id="clearButton" class="buttons mainButtons">Clear</button>
+                    <span id="clearNote">Clipboard and all fields will be cleared!</span>
+                </div>
             </div>
         </main>
 

@@ -18,7 +18,7 @@ header {
     top: 0;
     height: 80px;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
 }
@@ -54,7 +54,7 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
-#passphrase1Form {
+.flexibleContainers {
     margin-top: 30px;
 }
 
@@ -63,8 +63,9 @@ main {
 }
 
 @media (min-width: 900px) {
-    #flexibleContainer {
+    .flexibleContainers {
         display: flex;
+        /* border: solid; */
     }
 
     #passphrase1Form {
@@ -73,6 +74,7 @@ main {
     }
 
     #passphrase2Form {
+        margin-top: 0;
         padding-left: 5px;
         width: 50%;
     }
@@ -88,7 +90,7 @@ main {
     border-radius: 10px;
     caret-color: #81b5f9;
     padding: 5px;
-    transition: box-shadow 0.5s;
+    transition: box-shadow 500ms;
 }
 
 .inputs:focus {
@@ -117,6 +119,7 @@ main {
 
 .buttons {
     outline: none;
+    z-index: 500;
 
     margin: 0 auto;
     display: block;
@@ -130,15 +133,15 @@ main {
     background: linear-gradient(65deg, #b347e6, #81b5f9);
     cursor: pointer;
 
-    font-size: 16px;
+    font-size: 16pt;
     color: white;
 
-    transition: transform 0.1s, box-shadow 0.3s;
+    transition: transform 50ms, box-shadow 300ms;
 }
 
 /* @media (hover: none), (pointer: coarse) {
-    .buttons:active {
-        transition: transform 0.1s;
+    .buttons:hover {
+        transition: transform 100ms;
         transform: scale(0.95);
         -webkit-transform: scale(0.95);
         -ms-transform: scale(0.95);
@@ -147,10 +150,11 @@ main {
 
 @media (hover: hover) and (pointer: fine) {
     .buttons:hover {
-        transform: scale(1.05);
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        box-shadow: 0px 0px 15px rgba(179, 71, 230, 0.8);
+        box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.5);
+    }
+
+    .mainButtons:hover {
+        box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.7);
     }
     
     .buttons:active {
@@ -161,7 +165,11 @@ main {
 }
 
 .buttons:focus {
-    box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.8);
+    box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.5);
+}
+
+.mainButtons:focus {
+    box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.7);
 }
 
 .buttons:disabled {
@@ -174,6 +182,39 @@ main {
     box-shadow: none;
     -webkit-transform: none;
     -ms-transform: none;
+
+    transition: transform 100ms, box-shadow 0ms
+}
+
+.mainButtons {
+    width: 250px;
+    height: 80px;
+    border-radius: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    font-size: 24pt;
+}
+
+.buttonContainers {
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+
+#generateNote {
+    visibility: hidden;
+    color: #a0a0a0;
+}
+
+#copyNote {
+    visibility: hidden;
+    color: #a0a0a0;
+}
+
+#clearNote {
+    color: #a0a0a0;
 }
 
 footer {
@@ -189,7 +230,7 @@ footer {
 }
 
 #Copyright {
-    color: rgb(87, 87, 87);
+    color: #a0a0a0;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
