@@ -52,23 +52,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     showPassphrase1Checkbox.addEventListener('click', function() {
-        passphrase1Input.focus();
-
         if (passphrase1Input.type === 'password') {
             passphrase1Input.type = 'text';
         } else {
             passphrase1Input.type = 'password';
         }
+
+        passphrase1Input.focus();
+        // passphrase1Input.setSelectionRange(0, passphrase1Input.value.length);
     });
 
     showPassphrase2Checkbox.addEventListener('click', function() {
-        passphrase2Input.focus();
-
         if (passphrase2Input.type === 'password') {
             passphrase2Input.type = 'text';
         } else {
             passphrase2Input.type = 'password';
         }
+
+        passphrase2Input.focus();
+        // passphrase2Input.setSelectionRange(0, passphrase2Input.value.length);
     });
 
     showPasswordCheckbox.addEventListener('click', function() {

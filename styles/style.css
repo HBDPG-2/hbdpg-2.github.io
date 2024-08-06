@@ -4,6 +4,7 @@ body {
 
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
 
     user-select: none;
     -webkit-user-select: none;
@@ -54,11 +55,11 @@ main {
 }
 
 #passphrase1Form {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #passphrase2Form {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 @media (min-width: 900px) {
@@ -78,13 +79,25 @@ main {
 }
 
 .inputs {
+    outline: none;
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
     width: 100%;
     font-size: 18pt;
-    border: 2px solid #202020;
+    border: 2px solid #81b5f9;
     border-radius: 10px;
+    caret-color: #81b5f9;
     padding: 5px;
+    transition: box-shadow 0.5s;
+}
+
+.inputs:focus {
+    box-shadow: 0px 0px 15px rgba(179, 71, 230, 0.8);
+}
+
+.inputs:disabled {
+    background: #000;
+    border: 2px solid #202020;
 }
 
 .checkboxes {
@@ -103,16 +116,64 @@ main {
 }
 
 .buttons {
+    outline: none;
+
     margin: 0 auto;
     display: block;
 
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
 
-    border-radius: 15px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(65deg, #b347e6, #81b5f9);
+    cursor: pointer;
 
     font-size: 16px;
-    margin-top: 10px;
+    color: white;
+
+    transition: transform 0.1s, box-shadow 0.3s;
+}
+
+/* @media (hover: none), (pointer: coarse) {
+    .buttons:active {
+        transition: transform 0.1s;
+        transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+    }
+} */
+
+@media (hover: hover) and (pointer: fine) {
+    .buttons:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        box-shadow: 0px 0px 15px rgba(179, 71, 230, 0.8);
+    }
+    
+    .buttons:active {
+        transform: scale(0.98);
+        -webkit-transform: scale(0.98);
+        -ms-transform: scale(0.98);
+    }
+}
+
+.buttons:focus {
+    box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.8);
+}
+
+.buttons:disabled {
+    background: #101010;
+    border: 2px solid #202020;
+    cursor: auto;
+    color: #202020;
+
+    transform: none;
+    box-shadow: none;
+    -webkit-transform: none;
+    -ms-transform: none;
 }
 
 footer {
@@ -120,9 +181,11 @@ footer {
     left: 0;
     right: 0;
     /* bottom: 0; */
-    height: 80px;
+    height: 60px;
+    border-top: solid 2px #202020;
 
-    padding-top: 100px;
+    padding-top: 20px;
+    margin-top: 100px;
 }
 
 #Copyright {
