@@ -88,6 +88,7 @@ main {
     font-size: 1.5em;
     border: 2px solid #81b5f9;
     border-radius: 10px;
+    background-color: black;
     caret-color: #81b5f9;
     padding: 5px;
     transition: box-shadow 500ms;
@@ -100,6 +101,7 @@ main {
 .inputs:disabled {
     background: #000;
     border: 2px solid #202020;
+    color: #202020;
 }
 
 .checkboxes {
@@ -107,7 +109,16 @@ main {
     accent-color: white;
 }
 
+#showPassphrase2CheckboxLabel {
+    color: #202020;
+}
+
+#showPasswordCheckboxLabel {
+    color: #202020;
+}
+
 #result {
+    margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 
@@ -119,6 +130,7 @@ main {
 
 .buttons {
     outline: none;
+    /* -webkit-tap-highlight-color: transparent; */
 
     margin: 0 auto;
     display: block;
@@ -135,7 +147,7 @@ main {
     font-size: 1.2em;
     color: white;
 
-    transition: transform 50ms, box-shadow 300ms;
+    transition: transform 50ms, box-shadow 200ms;
 }
 
 /* @media (hover: none), (pointer: coarse) {
@@ -147,6 +159,7 @@ main {
     }
 } */
 
+/* For non-touchscreed devices */
 @media (hover: hover) and (pointer: fine) {
     .buttons:hover {
         box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.5);
@@ -205,7 +218,7 @@ main {
 #loading {
     vertical-align: middle;
     height: 70px;
-    animation: loadingAnimation 1.5s linear infinite;
+    animation: loadingAnimation 1200ms linear infinite;
 }
 
 @keyframes loadingAnimation {
@@ -240,7 +253,7 @@ footer {
     border-top: solid 2px #202020;
 
     padding-top: 20px;
-    margin-top: 80px;
+    margin-top: 30px;
 
     text-align: center;
 }

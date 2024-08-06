@@ -9,7 +9,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="stylesheet" href="styles/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
@@ -30,7 +30,7 @@
 
     <body>
         <header>
-            <img id="Logo" src="images/Logo.webp" alt="Logo">
+            <img id="Logo" src="images/Logo-beta.webp" alt="Logo">
         </header>
 
         <main>
@@ -44,7 +44,7 @@
                         <strong>Passphrase 1:</strong><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
                         <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
-                        <label for="showPassphrase1Checkbox">Show passphrase</label>
+                        <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">Show passphrase</label>
                         <button id="nextButton" class="buttons">Next</button>
                     </form>
 
@@ -52,7 +52,7 @@
                         <strong>Passphrase 2:</strong><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
                         <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
-                        <label for="showPassphrase2Checkbox">Show passphrase</label>
+                        <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">Show passphrase</label>
                         <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
                     </form>
                 </div>
@@ -60,21 +60,33 @@
 
             <div class="blocks">
                 <strong class="blockTitles">Advanced features</strong><br>
-                Coming soon...
+                <div>
+                    <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
+                </div>
+                <form style="margin-top: 30px;">
+                    <span>Coming soon...</span>
+                    <!-- <span>Choose password length:</span><br>
+                    <input id="lengthLite" class="passwordLength" name="passwordLength" type="radio" value="16">
+                    <label for="lengthLite"><b>Lite</b> – 16 characters</label><br>
+                    <input id="lengthStandard" class="passwordLength" name="passwordLength" type="radio" value="32" checked>
+                    <label for="lengthStandard"><b>Standard</b> – 32 characters</label><br>
+                    <input id="lengthUltra" class="passwordLength" name="passwordLength" type="radio" value="64">
+                    <label for="lengthUltra"><b>Ultra</b> – 64 characters</label><br> -->
+                </form>
             </div>
 
             <div class="blocks">
                 <strong class="blockTitles">Result</strong><br>
                 <input id="result" class="inputs" type="password" disabled>
                 <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
-                <label for="showPasswordCheckbox">Show password</label>
+                <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">Show password</label>
             </div>
 
             <div class="flexibleContainers">
                 <div class="buttonContainers">
-                    <button id="generateButton" class="buttons mainButtons" onclick="hashnow()" disabled>
+                    <button id="generateButton" class="buttons mainButtons" disabled>
                         <b>Generate</b>
-                        <!-- <img id="loading" src="images/loading.png" alt="Loaning"> -->
+                        <!-- <img id="loading" src="images/loading.webp" alt="Loaning"> -->
                         <!-- <b>Generated</b> -->
                     </button>
                     <span id="generateNote">On some low-performance devices,<br>generation may take a few minutes</span>
