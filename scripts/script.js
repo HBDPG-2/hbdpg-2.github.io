@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     copyButton.addEventListener('click', function() {
         navigator.clipboard.writeText(result.value);
-        copyNote.style.visibility = 'visible';
+        this.innerHTML = 'Copied';
+        // copyNote.style.visibility = 'visible';
         clearButton.focus();
     });
 
@@ -99,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function hashnow() {
     generateButton.setAttribute('disabled', 'disabled');
+    generateButton.innerHTML = '<img id="loading" src="images/loading.png" alt="Loaning">';
     generateNote.style.visibility = 'visible';
     // generate button loading...
 
@@ -123,6 +125,7 @@ function hashnow() {
         //    document.querySelector('pre').innerText =
         //        `Encoded: ${hash.encoded}\n` +
         //        `Hex: ${hash.hashHex}\n`;
+            generateButton.innerHTML = '<b>Generated</b>';
             generateNote.style.visibility = 'hidden';
             result.value = hash.hashHex;
             showPasswordCheckbox.removeAttribute('disabled');

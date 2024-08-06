@@ -119,7 +119,6 @@ main {
 
 .buttons {
     outline: none;
-    z-index: 500;
 
     margin: 0 auto;
     display: block;
@@ -203,15 +202,30 @@ main {
     text-align: center;
 }
 
+#loading {
+    vertical-align: middle;
+    height: 70px;
+    animation: loadingAnimation 1.5s linear infinite;
+}
+
+@keyframes loadingAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 #generateNote {
     visibility: hidden;
     color: #a0a0a0;
 }
 
-#copyNote {
+/* #copyNote {
     visibility: hidden;
     color: #a0a0a0;
-}
+} */
 
 #clearNote {
     color: #a0a0a0;
