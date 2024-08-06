@@ -4,7 +4,7 @@ body {
 
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
+    font-size: 1em;
 
     user-select: none;
     -webkit-user-select: none;
@@ -45,7 +45,7 @@ main {
 }
 
 .blockTitles {
-    font-size: 20pt;
+    font-size: 1.8em;
     display: inline-block;
     padding-bottom: 10px;
 
@@ -85,7 +85,7 @@ main {
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
     width: 100%;
-    font-size: 18pt;
+    font-size: 1.5em;
     border: 2px solid #81b5f9;
     border-radius: 10px;
     caret-color: #81b5f9;
@@ -133,7 +133,7 @@ main {
     background: linear-gradient(65deg, #b347e6, #81b5f9);
     cursor: pointer;
 
-    font-size: 16pt;
+    font-size: 1.2em;
     color: white;
 
     transition: transform 50ms, box-shadow 300ms;
@@ -193,7 +193,7 @@ main {
     margin-top: 20px;
     margin-bottom: 10px;
 
-    font-size: 24pt;
+    font-size: 2em;
 }
 
 .buttonContainers {
@@ -218,25 +218,23 @@ main {
 }
 
 footer {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
-    /* bottom: 0; */
+    bottom: 0;
     height: 60px;
     border-top: solid 2px #202020;
 
     padding-top: 20px;
-    margin-top: 100px;
+    margin-top: 80px;
+
+    text-align: center;
 }
 
 #Copyright {
     color: #a0a0a0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }
 
 #GitHubLink {
     color: #9589f0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }

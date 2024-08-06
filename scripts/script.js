@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const generateButton = document.getElementById('generateButton');
     const copyButton = document.getElementById('copyButton');
     const clearButton = document.getElementById('clearButton');
+    const generateNote = document.getElementById('generateNote');
+    const copyNote = document.getElementById('copyNote');
+    const clearNote = document.getElementById('clearNote');
     const result = document.getElementById('result');
 
     form1.removeAttribute('action');
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     copyButton.addEventListener('click', function() {
         navigator.clipboard.writeText(result.value);
-
+        copyNote.style.visibility = 'visible';
         clearButton.focus();
     });
 
@@ -96,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function hashnow() {
     generateButton.setAttribute('disabled', 'disabled');
+    generateNote.style.visibility = 'visible';
     // generate button loading...
 
     argon2
@@ -119,6 +123,7 @@ function hashnow() {
         //    document.querySelector('pre').innerText =
         //        `Encoded: ${hash.encoded}\n` +
         //        `Hex: ${hash.hashHex}\n`;
+            generateNote.style.visibility = 'hidden';
             result.value = hash.hashHex;
             showPasswordCheckbox.removeAttribute('disabled');
             copyButton.removeAttribute('disabled');
