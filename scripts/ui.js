@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyButton = document.getElementById('copyButton');
     const clearButton = document.getElementById('clearButton');
     const generateNote = document.getElementById('generateNote');
-    // const copyNote = document.getElementById('copyNote');
     const clearNote = document.getElementById('clearNote');
     const result = document.getElementById('result');
     
@@ -114,11 +113,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             result.type = 'password';
         }
+        showPasswordCheckbox.blur();
     });
 
     generateButton.addEventListener('click', function() {
         generateButton.setAttribute('disabled', 'disabled');
-        generateButton.innerHTML = '<img id="loading" src="images/loading.webp" alt="Loaning">';
+        generateButton.innerHTML = '<img id="loading" src="images/loading.webp" alt="Generating...">';
         // generateButton.style.border = '2px solid #81b5f9';
         // generateButton.style.boxShadow = '0px 0px 40px rgba(179, 71, 230, 0.7)';
         clearButton.setAttribute('disabled', 'disabled');
