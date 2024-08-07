@@ -13,7 +13,7 @@
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
-        <title>HBDPG-2: Deterministic password generaror</title>
+        <title>HBDPG-2 Beta: Deterministic password generaror</title>
         <link rel="manifest" href="manifest.webmanifest">
         <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
         <link rel="apple-touch-icon" sizes="192x192" href="images/icons/apple-touch-icon-192.png">
@@ -22,10 +22,6 @@
         <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72.png">
         <link rel="icon" type="image/png" href="images/icons/icon-128.png">
         <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon-128.ico">
-
-        <script src="scripts/script.js"></script>
-        <script src="scripts/sha512.js"></script>
-        <script src="scripts/argon2.js"></script>
     </head>
 
     <body>
@@ -37,22 +33,26 @@
             <div class="blocks">
                 <strong class="blockTitles">Inputs</strong><br>
 
-                <span>Create and remember <u>two different</u> strong passphrases.</span><br>
+                <span>Create and remember <u>two different</u> strong passphrases that are at least <u>8 characters long</u>.</span><br>
 
                 <div class="flexibleContainers">
                     <form id="passphrase1Form">
                         <strong>Passphrase 1:</strong><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
-                        <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
-                        <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">Show passphrase</label>
+                        <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">
+                            <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
+                            Show passphrase
+                        </label>
                         <button id="nextButton" class="buttons">Next</button>
                     </form>
 
                     <form id="passphrase2Form">
                         <strong>Passphrase 2:</strong><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
-                        <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
-                        <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">Show passphrase</label>
+                        <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">
+                            <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
+                            Show passphrase
+                        </label>
                         <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
                     </form>
                 </div>
@@ -78,8 +78,10 @@
             <div class="blocks">
                 <strong class="blockTitles">Result</strong><br>
                 <input id="result" class="inputs" type="password" disabled>
-                <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
-                <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">Show password</label>
+                <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
+                    <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
+                    Show password
+                </label>
             </div>
 
             <div class="flexibleContainers">
@@ -106,5 +108,10 @@
             <span id="Copyright">© 2024 Piotr Kniaz</span><br>
             <a id="GitHubLink" href="https://github.com/Piotr-Kniaz/HBDPG-2" target="_blank" rel="noopener noreferrer">GitHub</a>
         </footer>
+
+        <script src="scripts/ui.js"></script>
+        <script src="scripts/core.js"></script>
+        <script src="scripts/sha512.js"></script>
+        <script src="scripts/argon2.js"></script>
     </body>
 </html>

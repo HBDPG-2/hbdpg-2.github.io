@@ -34,6 +34,9 @@ header {
 
 main {
     padding-top: 80px;
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 1000px;
 }
 
 .blocks {
@@ -41,7 +44,7 @@ main {
     border: 2px solid #202020;
     border-radius: 15px;
     padding: 10px;
-    margin: 10px 5px 10px 5px;
+    margin: 5px 5px 15px 5px;
 }
 
 .blockTitles {
@@ -62,10 +65,9 @@ main {
     margin-top: 30px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 820px) {
     .flexibleContainers {
         display: flex;
-        /* border: solid; */
     }
 
     #passphrase1Form {
@@ -105,16 +107,49 @@ main {
 }
 
 .checkboxes {
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 2px #6a6a6a;
+    background-color: #202020;
+    vertical-align: sub;
+
+
     margin-top: 10px;
-    accent-color: white;
+    transition: transform 50ms;
+}
+
+.checkboxes:disabled {
+    box-shadow: 0px 0px 0px 2px #202020;
+    background-color: black;
+    pointer-events: none;
+}
+
+.checkboxes:checked {
+    box-shadow: 0px 0px 0px 2px #eaeaea;
+    background-color: #eaeaea;
+}
+
+.checkboxes:not(:checked):focus {
+    box-shadow: 0px 0px 0px 2px #a0a0a0;
+}
+
+.checkboxes:checked:focus {
+    box-shadow: 0px 0px 0px 2px white;
+    background-color: white;
 }
 
 #showPassphrase2CheckboxLabel {
     color: #202020;
+    pointer-events: none;
 }
 
 #showPasswordCheckboxLabel {
     color: #202020;
+    pointer-events: none;
 }
 
 #result {
@@ -161,6 +196,21 @@ main {
 
 /* For non-touchscreed devices */
 @media (hover: hover) and (pointer: fine) {
+    .checkboxes:not(:checked):hover {
+        box-shadow: 0px 0px 0px 2px #a0a0a0;
+    }
+
+    .checkboxes:checked:hover {
+        box-shadow: 0px 0px 0px 2px white;
+        background-color: white;
+    }
+
+    .checkboxes:active {
+        transform: scale(0.93);
+        -webkit-transform: scale(0.93);
+        -ms-transform: scale(0.93);
+    }
+
     .buttons:hover {
         box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.5);
     }

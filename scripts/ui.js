@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyButton = document.getElementById('copyButton');
     const clearButton = document.getElementById('clearButton');
     const generateNote = document.getElementById('generateNote');
-    const copyNote = document.getElementById('copyNote');
+    // const copyNote = document.getElementById('copyNote');
     const clearNote = document.getElementById('clearNote');
     const result = document.getElementById('result');
     
@@ -23,40 +23,65 @@ document.addEventListener('DOMContentLoaded', function() {
     form1.removeAttribute('action');
     form2.removeAttribute('action');
 
+    // Firefox reload fix
+    showPassphrase1Checkbox.checked = false;
+    passphrase2Input.setAttribute('disabled', 'disabled');
+    showPassphrase2Checkbox.checked = false;
+    showPassphrase2Checkbox.setAttribute('disabled', 'disabled');
+    confirmButton.setAttribute('disabled', 'disabled');
+    result.setAttribute('disabled', 'disabled');
+    showPasswordCheckbox.checked = false;
+    showPasswordCheckbox.setAttribute('disabled', 'disabled');
+    generateButton.setAttribute('disabled', 'disabled');
+    copyButton.setAttribute('disabled', 'disabled');
+    // End Firefox reload fix
+
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
-
-        passphrase1Input.type = 'password';
-        passphrase1Input.setAttribute('disabled', 'disabled');
-        showPassphrase1Checkbox.checked = false;
-        showPassphrase1Checkbox.setAttribute('disabled', 'disabled');
-        showPassphrase1CheckboxLabel.style.color = '#202020';
-        nextButton.setAttribute('disabled', 'disabled');
-        
-        passphrase2Input.removeAttribute('disabled');
-        showPassphrase2Checkbox.removeAttribute('disabled');
-        showPassphrase2CheckboxLabel.style.color = 'white';
-        confirmButton.removeAttribute('disabled');
-
-        passphrase2Input.type = 'password';
-        passphrase2Input.focus();
+        // console.log(passphrase1Input.value.length < 8);
+        if (passphrase1Input.value.length >= 8) {
+            passphrase1Input.type = 'password';
+            passphrase1Input.setAttribute('disabled', 'disabled');
+            showPassphrase1Checkbox.checked = false;
+            showPassphrase1Checkbox.setAttribute('disabled', 'disabled');
+            showPassphrase1CheckboxLabel.style.color = '#202020';
+            showPassphrase1CheckboxLabel.style.pointerEvents = 'none';
+            nextButton.setAttribute('disabled', 'disabled');
+            
+            passphrase2Input.removeAttribute('disabled');
+            showPassphrase2Checkbox.removeAttribute('disabled');
+            showPassphrase2CheckboxLabel.style.color = 'white';
+            showPassphrase2CheckboxLabel.style.pointerEvents = 'auto';
+            confirmButton.removeAttribute('disabled');
+    
+            passphrase2Input.type = 'password';
+            passphrase2Input.focus();
+        } else {
+            window.alert('Use at least 8 characters!');
+            passphrase1Input.focus();
+        }
     });
 
     form2.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        if (passphrase1Input.value != passphrase2Input.value) {
+        if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
             passphrase2Input.type = 'password';
             passphrase2Input.setAttribute('disabled', 'disabled');
             showPassphrase2Checkbox.checked = false;
             showPassphrase2Checkbox.setAttribute('disabled', 'disabled');
             showPassphrase2CheckboxLabel.style.color = '#202020';
+            showPassphrase2CheckboxLabel.style.pointerEvents = 'none';
             confirmButton.setAttribute('disabled', 'disabled');
 
             generateButton.removeAttribute('disabled');
             generateButton.focus();
         } else {
-            alert('Passphrases must be different!');
+            if (passphrase2Input.value.length < 8) {
+                window.alert('Use at least 8 characters!');
+            } else {
+                window.alert('Passphrases must be different!');
+            }
             passphrase2Input.focus();
         }
     });
@@ -94,7 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
     generateButton.addEventListener('click', function() {
         generateButton.setAttribute('disabled', 'disabled');
         generateButton.innerHTML = '<img id="loading" src="images/loading.webp" alt="Loaning">';
-        // generateButton.style.boxShadow = '0';
+        // generateButton.style.border = '2px solid #81b5f9';
+        // generateButton.style.boxShadow = '0px 0px 40px rgba(179, 71, 230, 0.7)';
+        clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
         setTimeout(hashnow, 500);
@@ -112,39 +139,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.location.reload();
     });
 });
-
-function hashnow() {
-    argon2
-        .hash({
-            pass: passphrase1Input.value,
-            salt: sha512(passphrase1Input.value),
-            secret: passphrase2Input.value,
-            ad: sha512(passphrase1Input.value),
-            time: 48,
-            mem: 256000,
-            hashLen: 32,
-            parallelism: 24,
-            type: argon2.ArgonType.Argon2id
-            // time: 1,
-            // mem: 1024,
-            // hashLen: 32,
-            // parallelism: 1,
-            // type: argon2.ArgonType.Argon2id
-        })
-        .then(hash => {
-        //    document.querySelector('pre').innerText =
-        //        `Encoded: ${hash.encoded}\n` +
-        //        `Hex: ${hash.hashHex}\n`;
-            result.value = hash.hashHex;
-            result.removeAttribute('disabled');
-            result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
-
-            generateButton.innerHTML = '<b>Generated</b>';
-            generateNote.style.visibility = 'hidden';
-            showPasswordCheckbox.removeAttribute('disabled');
-            showPasswordCheckboxLabel.style.color = 'white';
-            copyButton.removeAttribute('disabled');
-            copyButton.focus();
-        })
-        .catch(e => console.error('Error: ', e));
-}
