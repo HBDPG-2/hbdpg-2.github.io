@@ -9,6 +9,7 @@
     * [Run in browser](#run-in-browser)
     * [Install application](#install-application-recommended) **(recommended)**
     * [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) (for developers and advanced users)
+* [Usage](#usage)
 * [Advanced features](#advanced-features)
     * [Password length](#password-length) *(feature in development)*
     * [Custom Character Tables](#custom-character-tables) *(will be added later)*
@@ -73,9 +74,13 @@ HBDPG-2 uses WebAssembly, which does not work if you just open `index.html` as a
 
 
 
-## Using
+## Usage
 
-To generate a password, you must use **two different passphrases** that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult! You can also use "Advanced features" to enhance security.
+To generate a password, you must use **two different passphrases** that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "Advanced features" to enhance security.
+
+Generation is resource-intensive process that takes up to 15 seconds on average, but on some low-performance devices it can take a few minutes.
+
+After using the generated password, **click the `Clear` button** so that your password does not remain in the clipboard!
 
 
 
@@ -100,9 +105,9 @@ You can choose the password length from three types:
 
 ## Built-in security features
 
-* **High device performance requirements** slow down the algorithm and make brute-force attacks more difficult.
+* **High device performance requirements** reduce generation speed and make brute-force attacks longer and more resource-intensive.
 
-* **2-Factor Deterministic Generation (2-FDG)** significantly increases the possible number of combinations and make brute-force attacks more difficult.
+* **Using two different passphrases** to generate passwords significantly increases the possible number of combinations and make brute-force attacks more difficult.
 
 * **Reversibility Protection** prevents the generated hash and passphrases from being revealed if your password is compromised.
 
@@ -145,10 +150,6 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 ---
 
-<div style="text-align: center;">
-
 [MIT License](https://github.com/Piotr-Kniaz/HBDPG-2/blob/master/LICENSE)
 
 © 2024 Piotr Kniaz
-
-</div>

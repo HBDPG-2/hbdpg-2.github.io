@@ -65,6 +65,7 @@ main {
     margin-top: 30px;
 }
 
+/* For wide screens */
 @media (min-width: 820px) {
     .flexibleContainers {
         display: flex;
@@ -185,15 +186,6 @@ main {
 
     transition: transform 50ms, box-shadow 200ms;
 }
-
-/* @media (hover: none), (pointer: coarse) {
-    .buttons:hover {
-        transition: transform 100ms;
-        transform: scale(0.95);
-        -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-    }
-} */
 
 /* For non-touchscreed devices */
 @media (hover: hover) and (pointer: fine) {

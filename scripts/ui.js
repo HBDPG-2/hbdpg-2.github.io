@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
-        // console.log(passphrase1Input.value.length < 8);
+        
         if (passphrase1Input.value.length >= 8) {
             passphrase1Input.type = 'password';
             passphrase1Input.setAttribute('disabled', 'disabled');
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         passphrase1Input.focus();
-        // passphrase1Input.setSelectionRange(0, passphrase1Input.value.length);
     });
 
     showPassphrase2Checkbox.addEventListener('click', function() {
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         passphrase2Input.focus();
-        // passphrase2Input.setSelectionRange(0, passphrase2Input.value.length);
     });
 
     showPasswordCheckbox.addEventListener('click', function() {
