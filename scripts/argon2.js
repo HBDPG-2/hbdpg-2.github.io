@@ -69,9 +69,9 @@
             return global.loadArgon2WasmModule();
         }
         if (typeof require === 'function') {
-            return Promise.resolve(require('/scripts/argon2/argon2.js')); // TODO: Change path before release!
+            return Promise.resolve(require('../scripts/argon2/argon2.js'));
         }
-        return import('/scripts/argon2/argon2.js'); // TODO: Change path before release!
+        return import('../scripts/argon2/argon2.js');
     }
 
     function loadWasmBinary() {
@@ -79,7 +79,7 @@
             return global.loadArgon2WasmBinary();
         }
         if (typeof require === 'function') {
-            return Promise.resolve(require('/scripts/argon2/argon2.wasm')).then( // TODO: Change path before release!
+            return Promise.resolve(require('../scripts/argon2/argon2.wasm')).then(
                 (wasmModule) => {
                     return decodeWasmBinary(wasmModule);
                 }
@@ -87,7 +87,7 @@
         }
         const wasmPath =
             global.argon2WasmPath ||
-            '/scripts/argon2/argon2.wasm'; // TODO: Change path before release!
+            '../scripts/argon2/argon2.wasm';
         return fetch(wasmPath)
             .then((response) => response.arrayBuffer())
             .then((ab) => new Uint8Array(ab));

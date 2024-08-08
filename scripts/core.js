@@ -35,5 +35,12 @@ function hashnow() {
             clearButton.removeAttribute('disabled');
             copyButton.focus();
         })
-        .catch(e => console.error('Error: ', e));
+        .catch(e => {
+            console.error('Error: ', e);
+            window.alert('Error');
+            generateButton.innerHTML = '<b>Error!</b>';
+            generateNote.style.visibility = 'hidden';
+            clearButton.removeAttribute('disabled');
+            clearButton.focus();
+        });
 }
