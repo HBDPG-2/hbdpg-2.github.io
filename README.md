@@ -7,7 +7,6 @@
 * [Built-in security features](#built-in-security-features)
 * [Risks and Recommendations](#risks-and-recommendations)
 * [Feedback](#feedback)
-* [Support the developer](#support-the-developer)
 
 ## About
 
@@ -65,16 +64,3 @@ You can give feedback, ask a question or suggest an improvement on [this page](h
 If you find a bug, you can report it on [this page](https://github.com/Piotr-Kniaz/HBDPG-2/issues).
 
 If you have discovered a vulnerability, please read the [Security Policy](https://github.com/Piotr-Kniaz/HBDPG-2/blob/master/SECURITY.md) and report the issue **privately!**
-
-## Support the Developer
-
-**Thank you for using HBDPG-2!** It is a **free** and **open-source** project. You can support the developer with crypto.
-
-**BTC:**
-`113vrPRv2TVmH7kd1N5c4x6VHkZDes2Fd9`
-
-**USDT (TRC20):**
-`TDRGKbUegh8rz25xgrEZKp5D1iscNaPZUK`
-
-**TON or USDT (TON):**
-`UQBOHzCTnuyBHuWoeQAMggLXR_RwlHUrwXf8zvRqbgRr7fzz`
