@@ -6,32 +6,109 @@
         <meta name="msapplication-navbutton-color" content="#000000">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
-        <title>HBDPG-2: Coming soon...</title>
+        <title>HBDPG-2 Beta: Deterministic password generaror</title>
         <link rel="manifest" href="manifest.webmanifest">
-        <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/apple-touch-icon-512.png">
-        <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/apple-touch-icon-192.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon" sizes="128x128" href="assets/icons/apple-touch-icon-128.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-touch-icon-72.png">
-        <link rel="icon" type="image/png" href="assets/icons/icon-128.png">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon-128.ico">
-
+        <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="images/icons/apple-touch-icon-192.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="images/icons/apple-touch-icon-128.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72.png">
+        <link rel="icon" type="image/png" href="images/icons/icon-128.png">
+        <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon-128.ico">
     </head>
-    <body>
-        <img id="ComingSoon" src="assets/ComingSoon.webp" alt="Coming soon">
 
-        <div id="footer">
-            <div id="Copyright">© 2024 Piotr Kniaz</div>
-            <div style="text-align: center;">
-                <a id="GitHubLink" href="https://github.com/Piotr-Kniaz/HBDPG-2" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <body>
+        <header>
+            <img id="Logo" src="images/Logo-beta.webp" alt="Logo">
+        </header>
+
+        <main>
+            <div class="blocks">
+                <strong class="blockTitles">Inputs</strong><br>
+
+                <span>Create and remember <u>two different</u> strong passphrases that are at least <u>8 characters long</u>.</span><br>
+
+                <div class="flexibleContainers">
+                    <form id="passphrase1Form">
+                        <strong>Passphrase 1:</strong><br>
+                        <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
+                        <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">
+                            <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
+                            Show passphrase
+                        </label>
+                        <button id="nextButton" class="buttons">Next</button>
+                    </form>
+
+                    <form id="passphrase2Form">
+                        <strong>Passphrase 2:</strong><br>
+                        <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
+                        <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">
+                            <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
+                            Show passphrase
+                        </label>
+                        <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
+                    </form>
+                </div>
             </div>
-        </div>
+
+            <div class="blocks">
+                <strong class="blockTitles">Advanced features</strong><br>
+                <div>
+                    <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
+                </div>
+                <form style="margin-top: 30px;">
+                    <span>Coming soon...</span>
+                    <!-- <span>Choose password length:</span><br>
+                    <input id="lengthLite" class="passwordLength" name="passwordLength" type="radio" value="16">
+                    <label for="lengthLite"><b>Lite</b> – 16 characters</label><br>
+                    <input id="lengthStandard" class="passwordLength" name="passwordLength" type="radio" value="32" checked>
+                    <label for="lengthStandard"><b>Standard</b> – 32 characters</label><br>
+                    <input id="lengthUltra" class="passwordLength" name="passwordLength" type="radio" value="64">
+                    <label for="lengthUltra"><b>Ultra</b> – 64 characters</label><br> -->
+                </form>
+            </div>
+
+            <div class="blocks">
+                <strong class="blockTitles">Result</strong><br>
+                <input id="result" class="inputs" type="password" disabled>
+                <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
+                    <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
+                    Show password
+                </label>
+            </div>
+
+            <div class="flexibleContainers">
+                <div class="buttonContainers">
+                    <button id="generateButton" class="buttons mainButtons" disabled>
+                        <b>Generate</b>
+                    </button>
+                    <span id="generateNote">On some low-performance devices,<br>generation may take a few minutes</span>
+                </div>
+                <div class="buttonContainers">
+                    <button id="copyButton" class="buttons mainButtons" disabled>Copy</button>
+                </div>
+                <div class="buttonContainers">
+                    <button id="clearButton" class="buttons mainButtons">Clear</button>
+                    <span id="clearNote">Clipboard and all fields will be cleared</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <span id="Copyright">© 2024 Piotr Kniaz</span><br>
+            <a id="GitHubLink" href="https://github.com/Piotr-Kniaz/HBDPG-2" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+
+        <script src="scripts/ui.js"></script>
+        <script src="scripts/core.js"></script>
+        <script src="scripts/sha512.js"></script>
+        <script src="scripts/argon2.js"></script>
     </body>
 </html>

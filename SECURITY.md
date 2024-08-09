@@ -6,7 +6,7 @@ Users and security researchers are free to search for vulnerabilities in this pr
 
 **Please DO NOT report security vulnerabilities through public GitHub issues!**
 
-Use the **"Report a security vulnerability"** feature on "Issues" page or send email to **piotr.kniaz@ya.ru**.
+Use the **"Report a security vulnerability"** feature on "[Issues](https://github.com/Piotr-Kniaz/HBDPG-2/issues)" page or send email to **piotr.kniaz@ya.ru**.
 
 Please include the requested information listed below (as much as you can provide) to help better understand the nature and scope of the possible issue:
 
