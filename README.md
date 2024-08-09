@@ -1,6 +1,10 @@
 # HBDPG-2
 
-> **The project is still in development.** Beta-release is scheduled for fall 2024.
+### Beta is here! [Try HBDPG-2 now!](https://piotr-kniaz.github.io/HBDPG-2/)
+
+<p align="center">
+  <img src="pictures/banner.png" alt="Project banner">
+</p>
 
 ## Contents
 

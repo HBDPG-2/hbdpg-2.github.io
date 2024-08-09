@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
-        setTimeout(hashnow, 500);
+        setTimeout(generate, 500);
     });
 
     copyButton.addEventListener('click', function() {

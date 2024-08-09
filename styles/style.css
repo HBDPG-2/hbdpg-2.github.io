@@ -19,8 +19,8 @@ header {
     height: 80px;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 #Logo {
