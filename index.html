@@ -14,6 +14,10 @@
         <meta name="MobileOptimized" content="width">
 
         <title>HBDPG-2 Beta: Deterministic password generaror</title>
+        <meta name="description" content="Open-source cross-platform deterministic password generator">
+        <link rel="canonical" href="https://piotr-kniaz.github.io/HBDPG-2/">
+
+
         <link rel="manifest" href="manifest.webmanifest">
         <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
         <link rel="apple-touch-icon" sizes="192x192" href="images/icons/apple-touch-icon-192.png">
@@ -40,7 +44,9 @@
 
                 <div class="flexibleContainers">
                     <form id="passphrase1Form">
-                        <strong>Passphrase 1:</strong><br>
+                        <label for="passphrase1Input">
+                            <strong>Passphrase 1:</strong>
+                        </label><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
                         <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">
                             <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
@@ -50,7 +56,9 @@
                     </form>
 
                     <form id="passphrase2Form">
-                        <strong>Passphrase 2:</strong><br>
+                        <label for="passphrase2Input">
+                            <strong>Passphrase 2:</strong>
+                        </label><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
                         <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">
                             <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
@@ -63,6 +71,7 @@
 
             <div class="blocks">
                 <strong class="blockTitles">Advanced features</strong><br>
+                
                 <div>
                     <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
                 </div>
@@ -79,7 +88,9 @@
             </div>
 
             <div class="blocks">
-                <strong class="blockTitles">Result</strong><br>
+                <label class="blockTitles" for="result">
+                    <strong>Result</strong><br>
+                </label>
                 <input id="result" class="inputs" type="password" disabled>
                 <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
                     <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
