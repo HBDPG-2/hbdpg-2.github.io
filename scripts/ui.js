@@ -1,24 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form1 = document.getElementById('passphrase1Form');
-    const form2 = document.getElementById('passphrase2Form');
-    const passphrase1Input = document.getElementById('passphrase1Input');
-    const passphrase2Input = document.getElementById('passphrase2Input');
-    const showPassphrase1Checkbox = document.getElementById('showPassphrase1Checkbox');
-    const showPassphrase2Checkbox = document.getElementById('showPassphrase2Checkbox');
-    const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
-    const showPassphrase1CheckboxLabel = document.getElementById('showPassphrase1CheckboxLabel');
-    const showPassphrase2CheckboxLabel = document.getElementById('showPassphrase2CheckboxLabel');
-    const showPasswordCheckboxLabel = document.getElementById('showPasswordCheckboxLabel');
-    const nextButton = document.getElementById('nextButton');
-    const confirmButton = document.getElementById('confirmButton');
-    const generateButton = document.getElementById('generateButton');
-    const copyButton = document.getElementById('copyButton');
-    const clearButton = document.getElementById('clearButton');
-    const generateNote = document.getElementById('generateNote');
-    const clearNote = document.getElementById('clearNote');
-    const result = document.getElementById('result');
-    
-
     form1.removeAttribute('action');
     form2.removeAttribute('action');
 
@@ -122,9 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
-        setTimeout(() => {
-            generate();
-        }, 500);
+        generate();
     });
 
     copyButton.addEventListener('click', function() {
@@ -141,8 +119,35 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: "smooth"
         });
 
-        setTimeout(() => {
-            document.location.reload(true);
-        }, 500);
+        const checkIfScrollingFinished = () => {
+            if (window.scrollY === 0) {
+                document.location.reload(true);
+            } else {
+                setTimeout(() => {
+                    requestAnimationFrame(checkIfScrollingFinished);
+                }, 50);
+            }
+        };
+
+        requestAnimationFrame(checkIfScrollingFinished);
     });
 });
+
+const form1 = document.getElementById('passphrase1Form');
+const form2 = document.getElementById('passphrase2Form');
+const passphrase1Input = document.getElementById('passphrase1Input');
+const passphrase2Input = document.getElementById('passphrase2Input');
+const showPassphrase1Checkbox = document.getElementById('showPassphrase1Checkbox');
+const showPassphrase2Checkbox = document.getElementById('showPassphrase2Checkbox');
+const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+const showPassphrase1CheckboxLabel = document.getElementById('showPassphrase1CheckboxLabel');
+const showPassphrase2CheckboxLabel = document.getElementById('showPassphrase2CheckboxLabel');
+const showPasswordCheckboxLabel = document.getElementById('showPasswordCheckboxLabel');
+const nextButton = document.getElementById('nextButton');
+const confirmButton = document.getElementById('confirmButton');
+const generateButton = document.getElementById('generateButton');
+const copyButton = document.getElementById('copyButton');
+const clearButton = document.getElementById('clearButton');
+const generateNote = document.getElementById('generateNote');
+const clearNote = document.getElementById('clearNote');
+const result = document.getElementById('result');
