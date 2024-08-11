@@ -122,7 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
-        setTimeout(generate, 500);
+        setTimeout(() => {
+            generate();
+        }, 500);
     });
 
     copyButton.addEventListener('click', function() {
@@ -134,6 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.addEventListener('click', function() {
         navigator.clipboard.writeText('');
 
-        document.location.reload();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        setTimeout(() => {
+            document.location.reload(true);
+        }, 500);
     });
 });
