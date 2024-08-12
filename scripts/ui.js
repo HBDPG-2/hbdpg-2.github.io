@@ -100,7 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
-        generate();
+        setTimeout(() => {
+            generate();
+        }, 50);
     });
 
     copyButton.addEventListener('click', function() {
