@@ -102,7 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
-        generate();
+        setTimeout(() => {
+            generate();
+        }, 100);
     });
 
     copyButton.addEventListener('click', function() {
@@ -113,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     clearButton.addEventListener('click', function() {
         navigator.clipboard.writeText('');
+
+        // if scrolling will be not finished
+        setTimeout(() => {
+            document.location.reload(true);
+        }, 2000);
 
         window.scrollTo({
             top: 0,
@@ -151,3 +158,5 @@ const clearButton = document.getElementById('clearButton');
 const generateNote = document.getElementById('generateNote');
 const clearNote = document.getElementById('clearNote');
 const result = document.getElementById('result');
+const timeCount = document.getElementById('timeCount');
+const entropyCount = document.getElementById('entropyCount');

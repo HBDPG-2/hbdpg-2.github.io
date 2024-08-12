@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'none'; object-src 'none'; media-src 'none'; child-src 'none'; form-action 'none'; base-uri 'self'; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"> -->
+
         <meta charset="utf-8">
         <meta name="theme-color" content="#000000">
         <meta name="msapplication-navbutton-color" content="#000000">
@@ -13,10 +15,9 @@
         <meta name="HandheldFriendly" content="true">
         <meta name="MobileOptimized" content="width">
 
-        <title>HBDPG-2 Beta: Deterministic password generaror</title>
+        <title>HBDPG-2: Deterministic password generaror</title>
         <meta name="description" content="Open-source cross-platform deterministic password generator">
         <link rel="canonical" href="https://piotr-kniaz.github.io/HBDPG-2/">
-
 
         <link rel="manifest" href="manifest.webmanifest">
         <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
@@ -29,6 +30,9 @@
 
         <link rel="preload" href="images/check.svg" as="image">
         <link rel="preload" href="images/loading.webp" as="image">
+
+        <meta name="google-site-verification" content="x8LGsAJZb18AYa6tRbamGM3N22FhXNkDHhUxt2m5TvU">
+        <meta name="msvalidate.01" content="9E7FB030C34A1052637B51FD48F10D71">
     </head>
 
     <body>
@@ -75,22 +79,21 @@
                 <div>
                     <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
                 </div>
-                <form style="margin-top: 30px;">
+                <form id="comingSoon">
                     <span>Coming soon...</span>
-                    <!-- <span>Choose password length:</span><br>
-                    <input id="lengthLite" class="passwordLength" name="passwordLength" type="radio" value="16">
-                    <label for="lengthLite"><b>Lite</b> – 16 characters</label><br>
-                    <input id="lengthStandard" class="passwordLength" name="passwordLength" type="radio" value="32" checked>
-                    <label for="lengthStandard"><b>Standard</b> – 32 characters</label><br>
-                    <input id="lengthUltra" class="passwordLength" name="passwordLength" type="radio" value="64">
-                    <label for="lengthUltra"><b>Ultra</b> – 64 characters</label><br> -->
                 </form>
             </div>
 
             <div class="blocks">
                 <label class="blockTitles" for="result">
-                    <strong>Result</strong><br>
-                </label>
+                    <strong>Result</strong>
+                </label><br>
+
+                <div id="log">
+                    <span>Elapsed time: <span id="timeCount"></span></span><br>
+                    <span>Password entropy: <span id="entropyCount"></span></span>
+                </div>
+
                 <input id="result" class="inputs" type="password" disabled>
                 <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
                     <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
