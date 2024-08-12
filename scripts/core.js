@@ -1,9 +1,11 @@
 function generate() {
+    let startTime = performance.now();
+    let endTime;
+    let elapsedTime = 0.00;
+
     argon2.hash({
         pass: passphrase1Input.value,
-        salt: sha512(passphrase1Input.value),
-        secret: passphrase2Input.value,
-        ad: sha512(passphrase2Input.value),
+        salt: passphrase2Input.value,
         time: 48,
         mem: 256000,
         hashLen: 32 * 16,
@@ -11,10 +13,15 @@ function generate() {
         type: argon2.ArgonType.Argon2id
     }).then(hash => {
         let password = getPassword(hash);
+
+        endTime = performance.now();
+        elapsedTime = (endTime - startTime) / 1000;
         
         result.value = password;
         result.removeAttribute('disabled');
         result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
+        timeCount.innerHTML = `${elapsedTime.toFixed(3)} s`;
+        entropyCount.innerHTML = `${entropy.toFixed(2)} bits`;
         generateButton.innerHTML = '<b>Generated</b>';
         generateNote.style.visibility = 'hidden';
         showPasswordCheckbox.removeAttribute('disabled');
@@ -24,7 +31,7 @@ function generate() {
         clearButton.removeAttribute('disabled');
         copyButton.focus();
     }).catch(e => {
-        console.error('Error: ', e);
+        // console.error('Error: ', e);
         generateButton.innerHTML = '<b>Error!</b>';
         generateButton.style.color = '#990000';
         generateNote.style.visibility = 'hidden';
@@ -42,6 +49,8 @@ function getPassword(hash) {
         
         if (checkResult(password) === true) {
             return password;
+        } else {
+            entropy = 0.00;
         }
     }
 
@@ -91,7 +100,6 @@ function checkResult(password) {
     let lowerCaseCount = 0;
     let digitCount = 0;
     let specialCharCount = 0;
-    let entropy = 0.00;
 
     let minUpperCaseCount = 2;
     let minLowerCaseCount = 2;
@@ -147,6 +155,7 @@ function hexToDecimal(hexString) {
     return decimalArray;
 }
 
+let entropy = 0.00;
 let defaultCharacterTable = [ [ '3', 'U', 'I', '6', 'g', '9', '1', '8', 'n', 'W', '}', '2', '5', '\\', 'T', '}' ],
                               [ '5', '3', '2', 'V', '7', 'X', '2', '1', '3', '7', ',', '9', '_', '7', 'b', 'F' ],
                               [ 'H', '1', 'n', '5', '6', 'Q', 'C', ':', '+', '[', 'K', '0', 'e', '1', 'm', '0' ],

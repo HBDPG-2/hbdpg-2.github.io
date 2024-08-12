@@ -165,6 +165,10 @@ main {
     -moz-user-select: none;
 }
 
+#log {
+    color: #a0a0a0;
+}
+
 .buttons {
     outline: none;
     /* -webkit-tap-highlight-color: transparent; */

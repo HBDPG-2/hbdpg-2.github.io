@@ -19,7 +19,6 @@
         <meta name="description" content="Open-source cross-platform deterministic password generator">
         <link rel="canonical" href="https://piotr-kniaz.github.io/HBDPG-2/">
 
-
         <link rel="manifest" href="manifest.webmanifest">
         <link rel="apple-touch-icon" sizes="512x512" href="images/icons/apple-touch-icon-512.png">
         <link rel="apple-touch-icon" sizes="192x192" href="images/icons/apple-touch-icon-192.png">
@@ -87,8 +86,14 @@
 
             <div class="blocks">
                 <label class="blockTitles" for="result">
-                    <strong>Result</strong><br>
-                </label>
+                    <strong>Result</strong>
+                </label><br>
+
+                <div id="log">
+                    <span>Elapsed time: <span id="timeCount"></span></span><br>
+                    <span>Password entropy: <span id="entropyCount"></span></span>
+                </div>
+
                 <input id="result" class="inputs" type="password" disabled>
                 <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
                     <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
