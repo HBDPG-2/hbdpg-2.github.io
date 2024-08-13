@@ -1,7 +1,7 @@
 {
-    "name": "HBDPG-2: Deterministic password generator",
+    "name": "HBDPG-2",
     "short_name": "HBDPG-2",
-    "description": "Generate your passwords anywhere, securely, and without storing them!",
+    "description": "HBDPG-2 is a open-source, cross-platform deterministic password generator. Generate your strong passwords anywhere, securely, and without storing them!",
     "id": "https://piotr-kniaz.github.io/HBDPG-2/",
     "start_url": "https://piotr-kniaz.github.io/HBDPG-2/",
     "scope": "https://piotr-kniaz.github.io/HBDPG-2/",
