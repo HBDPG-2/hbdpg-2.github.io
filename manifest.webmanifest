@@ -1,7 +1,7 @@
 {
-    "name": "HBDPG-2",
+    "name": "HBDPG-2: Deterministic password generator",
     "short_name": "HBDPG-2",
-    "description": "Open-source cross-platform deterministic password generator",
+    "description": "Generate your passwords anywhere, securely, and without storing them!",
     "id": "https://piotr-kniaz.github.io/HBDPG-2/",
     "start_url": "https://piotr-kniaz.github.io/HBDPG-2/",
     "scope": "https://piotr-kniaz.github.io/HBDPG-2/",
@@ -9,8 +9,16 @@
     "background_color": "#000000",
     "theme_color": "#000000",
     "orientatnion": "any",
-    "icons": [
-    {
+    "icons": [ {
+        "src": "images/icons/icon-1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+    }, {
+        "src": "images/icons/maskable-icon-1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png",
+        "purpose": "maskable"
+    }, {
         "src": "images/icons/icon-512.png",
         "sizes": "512x512",
         "type": "image/png"
@@ -91,5 +99,31 @@
         "sizes": "64x64",
         "type": "image/png",
         "purpose": "maskable"
-    }]
+    } ],
+    "categories": [ "security" ],
+    "screenshots": [ {
+        "src": "pictures/screenshot-desktop-1.png",
+        "sizes": "2000x1500",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Create and remember two different passphrases."
+    }, {
+        "src": "pictures/screenshot-desktop-2.png",
+        "sizes": "2000x1500",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Generate your strong password!"
+    }, {
+        "src": "pictures/screenshot-mobile-1.png",
+        "sizes": "1170x2300",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Create and remember two different passphrases."
+    }, {
+        "src": "pictures/screenshot-mobile-2.png",
+        "sizes": "1170x2300",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Generate your strong password!"
+    } ]
 }
