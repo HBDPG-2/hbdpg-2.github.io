@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+            generateButton.scrollIntoView({
+                block: "center",
+                behavior: "smooth"
+            });
+
             passphrase2Input.type = 'password';
             passphrase2Input.setAttribute('disabled', 'disabled');
             showPassphrase2Checkbox.checked = false;
