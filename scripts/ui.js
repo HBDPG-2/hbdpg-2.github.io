@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
             generateButton.scrollIntoView({
-                block: "nearest",
+                block: "center",
                 behavior: "smooth"
             });
 
