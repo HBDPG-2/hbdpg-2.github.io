@@ -144,7 +144,13 @@ function checkResult(password) {
 
     entropy = password.length * Math.log2(uniqueChars.size);
 
-    if (entropy >= minEntropy && upperCaseCount >= minUpperCaseCount && lowerCaseCount >= minLowerCaseCount && digitCount >= minDigitCount && specialCharCount >= minSpecialCharCount) {
+    if (
+        entropy >= minEntropy &&
+        upperCaseCount >= minUpperCaseCount &&
+        lowerCaseCount >= minLowerCaseCount &&
+        digitCount >= minDigitCount &&
+        specialCharCount >= minSpecialCharCount
+    ) {
         return true;
     } else {
         return false;

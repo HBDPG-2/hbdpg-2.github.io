@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+            generateButton.scrollIntoView({
+                block: "center",
+                behavior: "smooth"
+            });
+
             passphrase2Input.type = 'password';
             passphrase2Input.setAttribute('disabled', 'disabled');
             showPassphrase2Checkbox.checked = false;
@@ -97,8 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
     generateButton.addEventListener('click', function() {
         generateButton.setAttribute('disabled', 'disabled');
         generateButton.innerHTML = '<img id="loading" src="images/loading.webp" alt="Generating...">';
-        // generateButton.style.border = '2px solid #81b5f9';
-        // generateButton.style.boxShadow = '0px 0px 40px rgba(179, 71, 230, 0.7)';
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 

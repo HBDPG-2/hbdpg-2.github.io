@@ -147,8 +147,7 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 ## Used sources
 
-* [argon2-browser](https://github.com/antelle/argon2-browser) (@d73916b)
-* [js-sha512](https://github.com/emn178/js-sha512) (version 0.9.0)
+* [argon2-browser](https://github.com/antelle/argon2-browser) (commit d73916b)
 
 
 
