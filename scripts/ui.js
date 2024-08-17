@@ -100,13 +100,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     generateButton.addEventListener('click', function() {
+        let passwordLength;
+
+        for (const option of passwordLengthChoice) {
+            if (option.checked) {
+                passwordLength = option.value;
+                break;
+            }
+        }
+
         generateButton.setAttribute('disabled', 'disabled');
         generateButton.innerHTML = '<img id="loading" src="images/loading.webp" alt="Generating...">';
+        passwordLengthChoice.forEach(elem => elem.setAttribute('disabled', 'disabled'));
+        passwordLengthRadioLabels.forEach(elem => {
+            elem.style.pointerEvents = 'none';
+            let radioButton = document.getElementById(elem.getAttribute('for'));
+            if (!radioButton.checked) {
+                elem.style.color = '#202020';
+            } else {
+                elem.style.color = '#6a6a6a';
+            }
+        });
         clearButton.setAttribute('disabled', 'disabled');
         generateNote.style.visibility = 'visible';
 
         setTimeout(() => {
-            generate(passphrase1Input.value, passphrase2Input.value, 32)
+            generate(passphrase1Input.value, passphrase2Input.value, passwordLength)
             .then(password => {
                 result.value = password.password;
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
@@ -178,6 +197,8 @@ const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
 const showPassphrase1CheckboxLabel = document.getElementById('showPassphrase1CheckboxLabel');
 const showPassphrase2CheckboxLabel = document.getElementById('showPassphrase2CheckboxLabel');
 const showPasswordCheckboxLabel = document.getElementById('showPasswordCheckboxLabel');
+const passwordLengthRadioLabels = document.querySelectorAll('.passwordLengthRadioLabels');
+const passwordLengthChoice = document.getElementsByName('length');
 const nextButton = document.getElementById('nextButton');
 const confirmButton = document.getElementById('confirmButton');
 const generateButton = document.getElementById('generateButton');
