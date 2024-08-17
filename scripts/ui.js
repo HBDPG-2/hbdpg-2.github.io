@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         generateNote.style.visibility = 'visible';
 
         setTimeout(() => {
-            generate(passphrase1Input.value, passphrase2Input.value)
+            generate(passphrase1Input.value, passphrase2Input.value, 32)
             .then(password => {
                 result.value = password.password;
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
@@ -131,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 generateNote.style.visibility = 'hidden';
                 clearButton.removeAttribute('disabled');
                 clearButton.focus();
-            }).finally(() => {
-
             });
         }, 100);
     });

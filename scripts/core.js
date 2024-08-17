@@ -1,4 +1,4 @@
-function generate(passphrase1, passphrase2) {
+function generate(passphrase1, passphrase2, passwordLength) {
     return new Promise((resolve, reject) => {
         let startTime = performance.now();
         let endTime;
@@ -9,7 +9,7 @@ function generate(passphrase1, passphrase2) {
             salt: passphrase2,
             time: 48,
             mem: 256000,
-            hashLen: 32 * 16,
+            hashLen: passwordLength * 16,
             parallelism: 24,
             type: argon2.ArgonType.Argon2id
             // time: 1,
