@@ -106,7 +106,34 @@ document.addEventListener('DOMContentLoaded', function() {
         generateNote.style.visibility = 'visible';
 
         setTimeout(() => {
-            generate();
+            generate(passphrase1Input.value, passphrase2Input.value)
+            .then(password => {
+                result.value = password.password;
+                timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
+                entropyCount.innerHTML = `${password.entropy.toFixed(2)} bits`;
+
+                result.removeAttribute('disabled');
+                result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
+                generateButton.innerHTML = '<b>Generated</b>';
+                generateNote.style.visibility = 'hidden';
+                showPasswordCheckbox.removeAttribute('disabled');
+                showPasswordCheckboxLabel.style.color = 'white';
+                showPasswordCheckboxLabel.style.pointerEvents = 'auto';
+
+                copyButton.removeAttribute('disabled');
+                clearButton.removeAttribute('disabled');
+                copyButton.focus();
+            }).catch(error => {
+                window.alert(error);
+
+                generateButton.innerHTML = '<b>Error!</b>';
+                generateButton.style.color = '#990000';
+                generateNote.style.visibility = 'hidden';
+                clearButton.removeAttribute('disabled');
+                clearButton.focus();
+            }).finally(() => {
+
+            });
         }, 100);
     });
 

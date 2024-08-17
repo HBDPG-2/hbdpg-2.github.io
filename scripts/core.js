@@ -1,49 +1,38 @@
-function generate() {
-    let startTime = performance.now();
-    let endTime;
-    let elapsedTime = 0.00;
+function generate(passphrase1, passphrase2) {
+    return new Promise((resolve, reject) => {
+        let startTime = performance.now();
+        let endTime;
+        let elapsedTime = 0.00;
 
-    argon2.hash({
-        pass: passphrase1Input.value,
-        salt: passphrase2Input.value,
-        time: 48,
-        mem: 256000,
-        hashLen: 32 * 16,
-        parallelism: 24,
-        type: argon2.ArgonType.Argon2id
-        // time: 1,
-        // mem: 1024,
-        // hashLen: 32 * 16,
-        // parallelism: 1,
-        // type: argon2.ArgonType.Argon2id
-    }).then(hash => {
-        let password = getPassword(hash);
+        argon2.hash({
+            pass: passphrase1,
+            salt: passphrase2,
+            time: 48,
+            mem: 256000,
+            hashLen: 32 * 16,
+            parallelism: 24,
+            type: argon2.ArgonType.Argon2id
+            // time: 1,
+            // mem: 1024,
+            // hashLen: 32 * 16,
+            // parallelism: 1,
+            // type: argon2.ArgonType.Argon2id
+        }).then(hash => {
+            let password = getPassword(hash);
+    
+            endTime = performance.now();
+            elapsedTime = (endTime - startTime) / 1000;
 
-        endTime = performance.now();
-        elapsedTime = (endTime - startTime) / 1000;
-        
-        result.value = password;
-        result.removeAttribute('disabled');
-        result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
-        timeCount.innerHTML = `${elapsedTime.toFixed(3)} s`;
-        entropyCount.innerHTML = `${entropy.toFixed(2)} bits`;
-        generateButton.innerHTML = '<b>Generated</b>';
-        // generateButton.style.border = '2px solid #202020';
-        // generateButton.style.boxShadow = 'none';
-        generateNote.style.visibility = 'hidden';
-        showPasswordCheckbox.removeAttribute('disabled');
-        showPasswordCheckboxLabel.style.color = 'white';
-        showPasswordCheckboxLabel.style.pointerEvents = 'auto';
-        copyButton.removeAttribute('disabled');
-        clearButton.removeAttribute('disabled');
-        copyButton.focus();
-    }).catch(e => {
-        // console.error('Error: ', e);
-        generateButton.innerHTML = '<b>Error!</b>';
-        generateButton.style.color = '#990000';
-        generateNote.style.visibility = 'hidden';
-        clearButton.removeAttribute('disabled');
-        clearButton.focus();
+            if (password !== null) {
+                resolve({password, entropy, elapsedTime});
+            } else {
+                reject('Failed to generate secure password. Try other passphrases or choose a different password length.');
+            }
+        }).catch(error => {
+            reject(error);
+        }).finally(() => {
+            argon2.unloadRuntime();
+        });
     });
 }
 
@@ -61,7 +50,6 @@ function getPassword(hash) {
         }
     }
 
-    window.alert('Failed to generate secure password. Try other passphrases or choose a different password length.');
     return null;
 }
 
@@ -169,6 +157,7 @@ function hexToDecimal(hexString) {
 }
 
 let entropy = 0.00;
+
 let defaultCharacterTable = [ [ '3', 'U', 'I', '6', 'g', '9', '1', '8', 'n', 'W', '}', '2', '5', '\\', 'T', '}' ],
                               [ '5', '3', '2', 'V', '7', 'X', '2', '1', '3', '7', ',', '9', '_', '7', 'b', 'F' ],
                               [ 'H', '1', 'n', '5', '6', 'Q', 'C', ':', '+', '[', 'K', '0', 'e', '1', 'm', '0' ],
