@@ -26,6 +26,10 @@
 
 ## About
 
+<p align="center">
+  <img src="pictures/screenshots-mobile.png" alt="Screenshots">
+</p>
+
 **HBDPG-2** *(Hashing-based Deterministic Password Generator – 2nd Gen)* is a open-source, cross-platform Web-application for deterministic password generation with a focus on security and brute-force attack resistance. The application is designed to solve the problem of creating, remembering and storing strong passwords.
 
 Password generation is performed **on the user's device**. User secrets (passphrases, passwords, other sensitive data) are not transmitted to servers. The generated password is 32 characters long (by default) and contains uppercase letters, lowercase letters, numbers, and symbols. This meets **all modern password standards**.
@@ -52,6 +56,10 @@ Please choose **one** of the following usage options:
 You can use HBDPG-2 via browser by following this link: https://piotr-kniaz.github.io/HBDPG-2/
 
 ### Install application (recommended)
+
+<p align="center">
+  <img src="pictures/screenshot-desktop-installation.png" alt="Installation">
+</p>
 
 You can install HBDPG-2 as Progressive Web App to have quick access from your Home Screen or Desktop.
 
@@ -93,8 +101,6 @@ After using the generated password, **click the `Clear` button** so that your pa
 **Warning!** Changing these parameters affects the generation! **Remember your changes** to get the same password next time.
 
 ### Password length
-
-> *Feature in development*
 
 You can choose the password length from three types:
 * **Lite** – 16 characters *(minimum length recommended by CISA)*

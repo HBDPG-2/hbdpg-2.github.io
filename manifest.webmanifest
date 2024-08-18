@@ -103,13 +103,13 @@
     "categories": [ "security" ],
     "screenshots": [ {
         "src": "pictures/screenshot-desktop-1.png",
-        "sizes": "2000x1500",
+        "sizes": "2200x1700",
         "type": "image/png",
         "form_factor": "wide",
         "label": "Create and remember two different passphrases."
     }, {
         "src": "pictures/screenshot-desktop-2.png",
-        "sizes": "2000x1500",
+        "sizes": "2200x1700",
         "type": "image/png",
         "form_factor": "wide",
         "label": "Generate your strong password!"
@@ -121,6 +121,12 @@
         "label": "Create and remember two different passphrases."
     }, {
         "src": "pictures/screenshot-mobile-2.png",
+        "sizes": "1170x2300",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Choose password length you need."
+    }, {
+        "src": "pictures/screenshot-mobile-3.png",
         "sizes": "1170x2300",
         "type": "image/png",
         "form_factor": "narrow",
