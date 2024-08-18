@@ -84,6 +84,8 @@ HBDPG-2 uses WebAssembly, which does not work if you just open `index.html` as a
 7. Press `Go Live` button at the bottom of the window
 8. HBDPG-2 will automatically launch in your browser!
 
+Probably, Content Security Policy will interfere with locally running. If you encounter this problem, open `index.html` in VS Code and comment out/remove the "Content-Security-Policy" meta tag in `<head>`.
+
 
 
 ## Usage
@@ -133,7 +135,7 @@ The main risk of using HBDPG-2 is the ability of an attacker to brute-force simp
 
 **Do not use HBDPG-2 on untrusted or compromised devices!**
 
-**Do not store passphrases or passwords in plain text!** If you must store them, use encryption (e.g. AES).
+**Do not store passphrases or passwords in plain text!** If you want to save them, use password managers or encrypt them manually (e.g. with AES).
 
 **Use unique passwords for each account.**
 
