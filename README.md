@@ -15,7 +15,7 @@
     * [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) (for developers and advanced users)
 * [Usage](#usage)
 * [Advanced features](#advanced-features)
-    * [Password length](#password-length) *(feature in development)*
+    * [Password length](#password-length)
     * [Custom Character Tables](#custom-character-tables) *(will be added later)*
 * [Built-in security features](#built-in-security-features)
 * [Risks and Recommendations](#risks-and-recommendations)
