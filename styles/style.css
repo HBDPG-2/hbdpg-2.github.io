@@ -158,6 +158,68 @@ main {
     pointer-events: none;
 }
 
+#passwordLengthForm {
+    margin-top: 30px;
+}
+
+#passwordLengthLabel {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.passwordLengthRadioLabels {
+    display: inline-block;
+    margin-left: 25px;
+    padding: 5px 5px 5px 5px;
+}
+
+.passwordLengthRadioButtons {
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px #6a6a6a;
+    background-color: #202020;
+    vertical-align: top;
+    margin-right: 5px;
+
+    transition: transform 50ms;
+}
+
+.passwordLengthRadioButtons:not(:checked):disabled {
+    box-shadow: 0px 0px 0px 2px #202020;
+    background-color: black;
+    pointer-events: none;
+}
+
+.passwordLengthRadioButtons:checked:disabled {
+    box-shadow:
+        0px 0px 0px 2px #6a6a6a,
+        0px 0px 0px 3px #202020 inset;
+    background-color: #6a6a6a;
+    pointer-events: none;
+}
+
+.passwordLengthRadioButtons:checked {
+    box-shadow:
+        0px 0px 0px 2px #eaeaea,
+        0px 0px 0px 3px #202020 inset;
+    background-color: #eaeaea;
+}
+
+.passwordLengthRadioButtons:not(:checked):focus {
+    box-shadow: 0px 0px 0px 2px #a0a0a0;
+}
+
+.passwordLengthRadioButtons:checked:focus {
+    box-shadow: 
+        0px 0px 0px 2px white,
+        0px 0px 0px 3px #202020 inset;
+    /* background-color: black; */
+}
+
 #result {
     margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
@@ -212,12 +274,33 @@ main {
         -ms-transform: scale(0.93);
     }
 
+    .passwordLengthRadioButtons:not(:checked):hover {
+        box-shadow: 0px 0px 0px 2px #a0a0a0;
+    }
+
+    .passwordLengthRadioButtons:checked:hover {
+        box-shadow: 
+            0px 0px 0px 2px white,
+            0px 0px 0px 3px #202020 inset;
+        background-color: white;
+    }
+
+    .passwordLengthRadioButtons:active {
+        transform: scale(0.93);
+        -webkit-transform: scale(0.93);
+        -ms-transform: scale(0.93);
+    }
+
     .buttons:hover {
         box-shadow: 0px 0px 25px rgba(179, 71, 230, 0.5);
     }
 
     .mainButtons:hover {
-        box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.7);
+        box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.6);
+    }
+
+    #clearButton:hover {
+        box-shadow: 0px 0px 40px rgba(255, 69, 57, 0.6);
     }
     
     .buttons:active {
@@ -235,6 +318,10 @@ main {
     box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.7);
 }
 
+#clearButton:focus {
+    box-shadow: 0px 0px 40px rgba(255, 69, 57, 0.6);
+}
+
 .buttons:disabled {
     background: #101010;
     border: 2px solid #202020;
@@ -247,6 +334,10 @@ main {
     -ms-transform: none;
 
     transition: transform 100ms, box-shadow 0ms
+}
+
+#clearButton:disabled {
+    background: #101010;
 }
 
 .mainButtons {
@@ -266,6 +357,10 @@ main {
     text-align: center;
 }
 
+#clearButton {
+    background: #ff4539;
+}
+
 #loading {
     vertical-align: middle;
     height: 70px;
@@ -279,10 +374,6 @@ main {
     to {
         transform: rotate(360deg);
     }
-}
-
-#comingSoon {
-    margin-top: 30px;
 }
 
 #generateNote {

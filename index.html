@@ -106,8 +106,24 @@
                 <div>
                     <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
                 </div>
-                <form id="comingSoon">
-                    <span>Coming soon...</span>
+
+                <form id="passwordLengthForm">
+                    <label for="passwordLengthForm" id="passwordLengthLabel">
+                        <strong>Password length:</strong>
+                    </label><br>
+
+                    <label for="lite" class="passwordLengthRadioLabels">
+                        <input id="lite" class="passwordLengthRadioButtons" type="radio" name="length" value="16">
+                        <b>Lite</b> - 16 characters
+                    </label><br>
+                    <label for="standard" class="passwordLengthRadioLabels">
+                        <input id="standard" class="passwordLengthRadioButtons" type="radio" name="length" value="32" checked>
+                        <b>Standard</b> - 32 characters
+                    </label><br>
+                    <label for="ultra" class="passwordLengthRadioLabels">
+                        <input id="ultra" class="passwordLengthRadioButtons" type="radio" name="length" value="64">
+                        <b>Ultra</b> - 64 characters
+                    </label>
                 </form>
             </div>
 
@@ -152,7 +168,6 @@
 
         <script src="scripts/ui.js"></script>
         <script src="scripts/core.js"></script>
-        <script src="scripts/sha512.js"></script>
         <script src="scripts/argon2.js"></script>
     </body>
 </html>

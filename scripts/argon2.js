@@ -65,32 +65,22 @@
     }
 
     function loadWasmModule() {
-        if (global.loadArgon2WasmModule) {
-            return global.loadArgon2WasmModule();
-        }
-        if (typeof require === 'function') {
-            return Promise.resolve(require('https://piotr-kniaz.github.io/HBDPG-2/scripts/argon2/argon2.js'));
-        }
-        return import('https://piotr-kniaz.github.io/HBDPG-2/scripts/argon2/argon2.js');
+        return import('./argon2/argon2.js');
     }
 
     function loadWasmBinary() {
-        if (global.loadArgon2WasmBinary) {
-            return global.loadArgon2WasmBinary();
-        }
-        if (typeof require === 'function') {
-            return Promise.resolve(require('https://piotr-kniaz.github.io/HBDPG-2/scripts/argon2/argon2.wasm')).then(
-                (wasmModule) => {
-                    return decodeWasmBinary(wasmModule);
-                }
-            );
-        }
-        const wasmPath =
-            global.argon2WasmPath ||
-            'https://piotr-kniaz.github.io/HBDPG-2/scripts/argon2/argon2.wasm';
-        return fetch(wasmPath)
+        return fetch('./scripts/argon2/argon2-simd.wasm')
             .then((response) => response.arrayBuffer())
-            .then((ab) => new Uint8Array(ab));
+            .then((ab) => {
+                const isValid = WebAssembly.validate(ab);
+                if (!isValid) {
+                    return fetch('./scripts/argon2/argon2.wasm')
+                        .then((response) => response.arrayBuffer())
+                        .then((altAb) => new Uint8Array(altAb));
+                } else {
+                    return new Uint8Array(ab);
+                }
+            });
     }
 
     function decodeWasmBinary(base64) {
