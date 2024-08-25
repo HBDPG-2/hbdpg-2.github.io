@@ -1,6 +1,6 @@
 # HBDPG-2
 
-<p align="center"><img src="pictures/banner.png" alt="Project banner" width="800px"></p>
+<p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/logo-icon-beta.png" alt="Project Logo" width="300px"></a></p>
 
 <p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/button.png" alt="Try HBDPG-2 now!" width="300px"></a></p>
 
