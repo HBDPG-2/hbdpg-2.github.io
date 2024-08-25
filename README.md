@@ -1,10 +1,8 @@
 # HBDPG-2
 
-### Beta is here! [Try HBDPG-2 now!](https://piotr-kniaz.github.io/HBDPG-2/)
+<p align="center"><img src="pictures/banner.png" alt="Project banner" width="800px"></p>
 
-<p align="center">
-  <img src="pictures/banner.png" alt="Project banner">
-</p>
+<p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/button.png" alt="Try HBDPG-2 now!" width="300px"></a></p>
 
 ## Contents
 
@@ -26,9 +24,7 @@
 
 ## About
 
-<p align="center">
-  <img src="pictures/screenshots-mobile.png" alt="Screenshots">
-</p>
+<p align="center"><img src="pictures/screenshots-mobile.png" alt="Screenshots"></p>
 
 **HBDPG-2** *(Hashing-based Deterministic Password Generator – 2nd Gen)* is a open-source, cross-platform Web-application for deterministic password generation with a focus on security and brute-force attack resistance. The application is designed to solve the problem of creating, remembering and storing strong passwords.
 
@@ -57,9 +53,7 @@ You can use HBDPG-2 via browser by following this link: https://piotr-kniaz.gith
 
 ### Install application (recommended)
 
-<p align="center">
-  <img src="pictures/screenshot-desktop-installation.png" alt="Installation">
-</p>
+<p align="center"><img src="pictures/screenshot-desktop-installation.png" alt="Installation"></p>
 
 You can install HBDPG-2 as Progressive Web App to have quick access from your Home Screen or Desktop.
 
@@ -161,6 +155,6 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 ---
 
-[MIT License](https://github.com/Piotr-Kniaz/HBDPG-2/blob/master/LICENSE)
+<p align="center"><a href="https://github.com/Piotr-Kniaz/HBDPG-2/blob/master/LICENSE">MIT License</a></p>
 
-© 2024 Piotr Kniaz
+<p align="center">© 2024 Piotr Kniaz</p>
