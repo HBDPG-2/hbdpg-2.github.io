@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.addEventListener('click', function() {
         navigator.clipboard.writeText('');
 
+        clearButton.blur();
+
         // if scrolling will be not finished
         setTimeout(() => {
             document.location.reload(true);
