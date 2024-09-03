@@ -4,6 +4,10 @@
 
 <p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/button.png" alt="Try HBDPG-2 now!" width="300px"></a></p>
 
+<p align="center"><i><b>HBDPG-2</b> is incompatible with HBDPG-1</i></p>
+
+
+
 ## Contents
 
 * [About](#about)
