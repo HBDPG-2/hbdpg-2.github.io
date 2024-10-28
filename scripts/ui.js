@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     form1.removeAttribute('action');
     form2.removeAttribute('action');
 
+    let passphrase1;
+    let passphrase2;
+
     // Firefox reload fix
     showPassphrase1Checkbox.checked = false;
     passphrase2Input.setAttribute('disabled', 'disabled');
@@ -19,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         
         if (passphrase1Input.value.length >= 8) {
+            passphrase1 = passphrase1Input.value;
+            passphrase1Input.value = "*".repeat(passphrase1.length);
+
             passphrase1Input.type = 'password';
             passphrase1Input.setAttribute('disabled', 'disabled');
             showPassphrase1Checkbox.checked = false;
@@ -35,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
             passphrase2Input.type = 'password';
             passphrase2Input.focus();
+
+            passphrasesSecurity(passphrase1Input);
         } else {
             window.alert('Use at least 8 characters!');
             passphrase1Input.focus();
@@ -44,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     form2.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+        if (passphrase1 != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+            passphrase2 = passphrase2Input.value;
+            passphrase2Input.value = "*".repeat(passphrase2.length);
+
             generateButton.scrollIntoView({
                 block: "center",
                 behavior: "smooth"
@@ -60,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             generateButton.removeAttribute('disabled');
             generateButton.focus();
+
+            passphrasesSecurity(passphrase2Input);
         } else {
             if (passphrase2Input.value.length < 8) {
                 window.alert('Use at least 8 characters!');
@@ -125,11 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
         generateNote.style.visibility = 'visible';
 
         setTimeout(() => {
-            generate(passphrase1Input.value, passphrase2Input.value, passwordLength)
+            generate(passphrase1, passphrase2, passwordLength)
             .then(password => {
                 result.value = password.password;
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
                 entropyCount.innerHTML = `${password.entropy.toFixed(2)} bits`;
+
+                clearPassphrases();
 
                 result.removeAttribute('disabled');
                 result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
@@ -144,6 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 copyButton.focus();
             }).catch(error => {
                 window.alert(error);
+
+                clearPassphrases();
 
                 generateButton.innerHTML = '<b>Error!</b>';
                 generateButton.style.color = '#990000';
@@ -187,6 +204,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         requestAnimationFrame(checkIfScrollingFinished);
     });
+
+    window.clearPassphrases = function() {
+        passphrase1 = '';
+        passphrase2 = '';
+    };
 });
 
 const form1 = document.getElementById('passphrase1Form');

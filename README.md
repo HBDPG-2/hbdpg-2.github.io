@@ -45,7 +45,7 @@ With HBDPG-2, **you don't have to save and remember your passwords**, making the
 ## Getting started
 
 **To use HBDPG-2 you will need:**
-* Device with any OS *(tested on Windows, MacOS, iOS, Android)*
+* Device with any OS *(tested on Windows, macOS, iOS, Android)*
 * Any browser of the current version *(tested on Chrome, Safari, Firefox, Edge)*
 * 500 MB of RAM
 
