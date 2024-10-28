@@ -144,8 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
                 entropyCount.innerHTML = `${password.entropy.toFixed(2)} bits`;
 
-                passphrase1 = '';
-                passphrase2 = '';
+                clearPassphrases();
 
                 result.removeAttribute('disabled');
                 result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
@@ -160,6 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 copyButton.focus();
             }).catch(error => {
                 window.alert(error);
+
+                clearPassphrases();
 
                 generateButton.innerHTML = '<b>Error!</b>';
                 generateButton.style.color = '#990000';

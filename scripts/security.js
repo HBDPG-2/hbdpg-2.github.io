@@ -2,6 +2,8 @@ function passphrasesSecurity(element) {
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (element.type !== 'password') {
+                clearPassphrases();
+
                 passphrase1Input.value = '';
                 passphrase2Input.value = '';
                 result.value = '';
@@ -43,7 +45,6 @@ function passphrasesSecurity(element) {
 
                 setTimeout(() => {
                     alert('PASSPHRASE COMPROMISE ATTEMPT DETECTED!\nAll fields cleared, HBDPG-2 is stopped.\n\nClick the Clear button to reload HBDPG-2.');
-                    clearPassphrases();
                 }, 10);
             }
         });
