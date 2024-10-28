@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     form1.removeAttribute('action');
     form2.removeAttribute('action');
 
+    var passphrase1;
+    var passphrase2;
+
     // Firefox reload fix
     showPassphrase1Checkbox.checked = false;
     passphrase2Input.setAttribute('disabled', 'disabled');
@@ -19,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         
         if (passphrase1Input.value.length >= 8) {
+            passphrase1 = passphrase1Input.value;
+            passphrase1Input.value = "*".repeat(passphrase1.length);
+
             passphrase1Input.type = 'password';
             passphrase1Input.setAttribute('disabled', 'disabled');
             showPassphrase1Checkbox.checked = false;
@@ -46,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     form2.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        if (passphrase1Input.value != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+        if (passphrase1 != passphrase2Input.value && passphrase2Input.value.length >= 8) {
+            passphrase2 = passphrase2Input.value;
+            passphrase2Input.value = "*".repeat(passphrase2.length);
+
             generateButton.scrollIntoView({
                 block: "center",
                 behavior: "smooth"
@@ -129,14 +138,14 @@ document.addEventListener('DOMContentLoaded', function() {
         generateNote.style.visibility = 'visible';
 
         setTimeout(() => {
-            generate(passphrase1Input.value, passphrase2Input.value, passwordLength)
+            generate(passphrase1, passphrase2, passwordLength)
             .then(password => {
                 result.value = password.password;
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
                 entropyCount.innerHTML = `${password.entropy.toFixed(2)} bits`;
 
-                passphrase1Input.value = '';
-                passphrase2Input.value = '';
+                passphrase1 = '';
+                passphrase2 = '';
 
                 result.removeAttribute('disabled');
                 result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
@@ -194,7 +203,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         requestAnimationFrame(checkIfScrollingFinished);
     });
+
+    window.clearPassphrases = function() {
+        passphrase1 = '';
+        passphrase2 = '';
+    };
 });
+
+function restartPage() {
+
+}
 
 const form1 = document.getElementById('passphrase1Form');
 const form2 = document.getElementById('passphrase2Form');
