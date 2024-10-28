@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     form1.removeAttribute('action');
     form2.removeAttribute('action');
 
-    var passphrase1;
-    var passphrase2;
+    let passphrase1;
+    let passphrase2;
 
     // Firefox reload fix
     showPassphrase1Checkbox.checked = false;
@@ -209,10 +209,6 @@ document.addEventListener('DOMContentLoaded', function() {
         passphrase2 = '';
     };
 });
-
-function restartPage() {
-
-}
 
 const form1 = document.getElementById('passphrase1Form');
 const form2 = document.getElementById('passphrase2Form');
