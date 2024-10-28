@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
             passphrase2Input.type = 'password';
             passphrase2Input.focus();
+
+            passphrasesSecurity(passphrase1Input);
         } else {
             window.alert('Use at least 8 characters!');
             passphrase1Input.focus();
@@ -60,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             generateButton.removeAttribute('disabled');
             generateButton.focus();
+
+            passphrasesSecurity(passphrase2Input);
         } else {
             if (passphrase2Input.value.length < 8) {
                 window.alert('Use at least 8 characters!');
@@ -130,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 result.value = password.password;
                 timeCount.innerHTML = `${password.elapsedTime.toFixed(3)} s`;
                 entropyCount.innerHTML = `${password.entropy.toFixed(2)} bits`;
+
+                passphrase1Input.value = '';
+                passphrase2Input.value = '';
 
                 result.removeAttribute('disabled');
                 result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
