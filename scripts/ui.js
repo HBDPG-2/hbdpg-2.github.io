@@ -56,11 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase2 = passphrase2Input.value;
             passphrase2Input.value = "*".repeat(passphrase2.length);
 
-            generateButton.scrollIntoView({
-                block: "center",
-                behavior: "smooth"
-            });
-
             passphrase2Input.type = 'password';
             passphrase2Input.setAttribute('disabled', 'disabled');
             showPassphrase2Checkbox.checked = false;
@@ -68,9 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
             showPassphrase2CheckboxLabel.style.color = '#202020';
             showPassphrase2CheckboxLabel.style.pointerEvents = 'none';
             confirmButton.setAttribute('disabled', 'disabled');
-
+            
             generateButton.removeAttribute('disabled');
             generateButton.focus();
+
+            result.scrollIntoView({
+                block: "center",
+                behavior: "smooth"
+            });
 
             passphrasesSecurity(passphrase2Input);
         } else {
@@ -147,6 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearPassphrases();
 
                 result.removeAttribute('disabled');
+                result.setAttribute('readonly', true);
+                result.style.border = '2px solid #81b5f9';
                 result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
                 generateButton.innerHTML = '<b>Generated</b>';
                 generateNote.style.visibility = 'hidden';
