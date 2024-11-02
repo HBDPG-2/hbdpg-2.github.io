@@ -69,12 +69,12 @@
     }
 
     function loadWasmBinary() {
-        return fetch('./scripts/argon2/argon2-simd.wasm')
+        return fetch('./argon2/argon2-simd.wasm')
             .then((response) => response.arrayBuffer())
             .then((ab) => {
                 const isValid = WebAssembly.validate(ab);
                 if (!isValid) {
-                    return fetch('./scripts/argon2/argon2.wasm')
+                    return fetch('./argon2/argon2.wasm')
                         .then((response) => response.arrayBuffer())
                         .then((altAb) => new Uint8Array(altAb));
                 } else {

@@ -1,4 +1,33 @@
-function generate(passphrase1, passphrase2, passwordLength) {
+importScripts('argon2.js');
+
+let passphrase1 = null;
+let passphrase2 = null;
+let passwordLength = null;
+
+self.onmessage = function(event) {
+    const { message, data } = event.data;
+
+    switch (message) {
+        case 'passphrase1':
+            passphrase1 = data;
+            break;
+        case 'passphrase2':
+            passphrase2 = data;
+            break;
+        case 'passwordLength':
+            passwordLength = data;
+            break;
+        case 'generate':
+            if (passphrase1 !== null && passphrase2 !== null && passwordLength !== null) {
+                generate()
+                .then(result => self.postMessage({ status: 'Successful', result }))
+                .catch(error => self.postMessage({ status: 'Error', error }));
+            }
+            break;
+    }
+}
+
+function generate() {
     return new Promise((resolve, reject) => {
         let startTime = performance.now();
         let endTime;
