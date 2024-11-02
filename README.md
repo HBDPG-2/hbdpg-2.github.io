@@ -88,7 +88,7 @@ Probably, Content Security Policy will interfere with locally running. If you en
 
 ## Usage
 
-To generate a password, you must use **two different passphrases** that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "Advanced features" to enhance security.
+To generate a password, you must use two passphrases that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "Advanced features" to enhance security.
 
 Generation is resource-intensive process that takes up to 15 seconds on average, but on some low-performance devices it can take a few minutes.
 

@@ -300,7 +300,7 @@ main {
         box-shadow: 0px 0px 40px rgba(179, 71, 230, 0.6);
     }
 
-    #clearButton:hover {
+    #clearButton:not(:disabled):hover {
         box-shadow: 0px 0px 40px rgba(255, 69, 57, 0.6);
     }
     

@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
     showPasswordCheckbox.setAttribute('disabled', 'disabled');
     generateButton.setAttribute('disabled', 'disabled');
     copyButton.setAttribute('disabled', 'disabled');
+    passwordLengthChoice.forEach(elem => {
+        if (elem.id === 'standard') {
+            elem.checked = true;
+        } else {
+            elem.checked = false;
+        }
+    });
     // End Firefox reload fix
 
     form1.addEventListener('submit', function(event) {
