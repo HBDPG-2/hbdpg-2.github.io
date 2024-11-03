@@ -135,9 +135,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         clearButton.setAttribute('disabled', 'disabled');
-        generateNote.style.visibility = 'visible';
 
         core.postMessage({ message: 'generate', data: '' });
+
+        setTimeout(() => {
+            generateNote.style.opacity = '1';
+
+            setTimeout(() => {
+                generateNote.style.animation = 'pulsateAnimation 2000ms ease-in infinite alternate';
+            }, 1000);
+        }, 3000);
     });
 
     core.onmessage = function(event) {
