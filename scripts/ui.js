@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // End Firefox reload fix
 
+    // Apply custom scrollbar
+    // const isAppleDevice = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (!isSafari) {
+        document.body.classList.add('custom-scrollbar');
+    }
+
+    // console.log('Is Apple Device: ' + isAppleDevice);
+    console.log('Is Safari: ' + isSafari);
+
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
         
