@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // End Firefox reload fix
 
+    // Apply custom scrollbar
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (!isSafari) {
+        document.body.classList.add('custom-scrollbar');
+    }
+    // End apply custom scrollbar
+
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
         
