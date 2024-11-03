@@ -221,10 +221,8 @@ main {
 
 #result {
     margin-top: 20px;
-    font-size: 1.5em;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Consolas', monospace;
     text-align: center;
-    padding: 5px;
 
     pointer-events: none;
     user-select: none;
@@ -378,8 +376,15 @@ main {
 }
 
 #generateNote {
-    visibility: hidden;
+    opacity: 0;
     color: #a0a0a0;
+    transition: opacity 1000ms ease-in;
+    /* animation: pulsateAnimation 2000ms ease-out infinite alternate; */
+}
+
+@keyframes pulsateAnimation {
+    from { opacity: 1; }
+    to { opacity: 0.6; }
 }
 
 #clearNote {
