@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    form1.removeAttribute('action');
-    form2.removeAttribute('action');
+    // Console warning
+    console.log('%cWARNING!', 'font-size: 28px; color: #ffff00; background-color: #ff0000;');
+    console.log('%cDO NOT enter or paste any code here that you do not understand!\nUsing this console may allow attackers to steal your information.', 'font-size: 18px;');
 
     const core = new Worker('scripts/core.js');
 
@@ -255,3 +256,7 @@ const clearNote = document.getElementById('clearNote');
 const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
+
+// Preload images
+(new Image()).src = 'images/check.svg';
+(new Image()).src = 'images/loading.webp';
