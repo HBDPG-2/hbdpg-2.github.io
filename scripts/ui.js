@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             passphrase1Input.type = 'password';
             passphrase1Input.setAttribute('disabled', 'disabled');
+            passphrase1Input.style.pointerEvents = 'none';
             showPassphrase1Checkbox.checked = false;
             showPassphrase1Checkbox.setAttribute('disabled', 'disabled');
             showPassphrase1CheckboxLabel.style.color = '#202020';
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             passphrase2Input.type = 'password';
             passphrase2Input.setAttribute('disabled', 'disabled');
+            passphrase2Input.style.pointerEvents = 'none';
             showPassphrase2Checkbox.checked = false;
             showPassphrase2Checkbox.setAttribute('disabled', 'disabled');
             showPassphrase2CheckboxLabel.style.color = '#202020';
@@ -84,11 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: "smooth"
             });
         } else {
-            if (passphrase2Input.value.length < 8) {
-                window.alert('Use at least 8 characters!');
-            } else {
-                window.alert('Passphrases must be different!');
-            }
+            window.alert('Use at least 8 characters!');
             passphrase2Input.focus();
         }
     });
