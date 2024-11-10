@@ -72,7 +72,12 @@
             <div class="blocks">
                 <strong class="blockTitles">Inputs</strong><br>
 
-                <span>Create and remember two strong passphrases that are at least <u>8 characters long</u>.</span><br>
+                <!-- <span>Create and remember two strong passphrases that are at least <u>8 characters long</u>.</span><br> -->
+
+                <span>For optimal security, we recommend <u>using two distinct passphrases</u> when generating your password. 
+                    This helps ensure that even if one passphrase is compromised, your generated password remain secure. 
+                    Try to choose phrases that are <u>memorable but unique to you</u>.</span><br><br>
+                <span>Each passphrase must be <u>at least 8 characters long</u>.</span><br>
 
                 <div class="flexibleContainers">
                     <form id="passphrase1Form">
@@ -80,9 +85,9 @@
                             <strong>Passphrase 1:</strong>
                         </label><br>
                         <input id="passphrase1Input" class="inputs" type="password" required minlength="8" autocomplete="off" autofocus><br>
-                        <label id="showPassphrase1CheckboxLabel" for="showPassphrase1Checkbox">
+                        <label id="showPassphrase1CheckboxLabel" class="checkboxLabels">
                             <input id="showPassphrase1Checkbox" class="checkboxes" type="checkbox">
-                            Show passphrase
+                            <span>Show passphrase</span>
                         </label>
                         <button id="nextButton" class="buttons">Next</button>
                     </form>
@@ -92,9 +97,9 @@
                             <strong>Passphrase 2:</strong>
                         </label><br>
                         <input id="passphrase2Input" class="inputs" type="text" required minlength="8" autocomplete="off" disabled><br>
-                        <label id="showPassphrase2CheckboxLabel" for="showPassphrase2Checkbox">
+                        <label id="showPassphrase2CheckboxLabel" class="checkboxLabels">
                             <input id="showPassphrase2Checkbox" class="checkboxes" type="checkbox" disabled>
-                            Show passphrase
+                            <span>Show passphrase</span>
                         </label>
                         <button id="confirmButton" class="buttons" value="Confirm" disabled>Confirm</button>
                     </form>
@@ -115,15 +120,15 @@
 
                     <label for="lite" class="passwordLengthRadioLabels">
                         <input id="lite" class="passwordLengthRadioButtons" type="radio" name="length" value="16">
-                        <b>Lite</b> - 16 characters
+                        <span><b>Lite</b> - 16 characters</span>
                     </label><br>
                     <label for="standard" class="passwordLengthRadioLabels">
                         <input id="standard" class="passwordLengthRadioButtons" type="radio" name="length" value="32" checked>
-                        <b>Standard</b> - 32 characters
+                        <span><b>Standard</b> - 32 characters</span>
                     </label><br>
                     <label for="ultra" class="passwordLengthRadioLabels">
                         <input id="ultra" class="passwordLengthRadioButtons" type="radio" name="length" value="64">
-                        <b>Ultra</b> - 64 characters
+                        <span><b>Ultra</b> - 64 characters</span>
                     </label>
                 </form>
             </div>
@@ -139,9 +144,9 @@
                 </div>
 
                 <input id="result" class="inputs" type="password" disabled>
-                <label id="showPasswordCheckboxLabel" for="showPasswordCheckbox">
+                <label id="showPasswordCheckboxLabel" class="checkboxLabels">
                     <input id="showPasswordCheckbox" class="checkboxes" type="checkbox" disabled>
-                    Show password
+                    <span>Show password</span>
                 </label>
             </div>
 
