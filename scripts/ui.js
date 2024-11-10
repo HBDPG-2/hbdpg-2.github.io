@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             elem.checked = false;
         }
     });
+    clearClipboardCheckbox.checked = true;
     // End Firefox reload fix
 
     // Apply custom scrollbar
@@ -201,8 +202,17 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.focus();
     });
 
+    clearClipboardCheckbox.addEventListener('change', (event) => {
+        if (!event.target.checked && !window.confirm("Are you sure you don't want to clear the clipboard?\n" +
+            "Leaving your password in the clipboard could be a security risk.")) {
+            event.target.checked = true;
+        }
+    });
+
     clearButton.addEventListener('click', function() {
-        navigator.clipboard.writeText('');
+        if (clearClipboardCheckbox.checked) {
+            navigator.clipboard.writeText('');
+        }
 
         clearButton.blur();
 
@@ -248,11 +258,10 @@ const generateButton = document.getElementById('generateButton');
 const copyButton = document.getElementById('copyButton');
 const clearButton = document.getElementById('clearButton');
 const generateNote = document.getElementById('generateNote');
-const clearNote = document.getElementById('clearNote');
+const clearClipboardCheckbox = document.getElementById('clearClipboardCheckbox');
 const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
 
 // Preload images
-(new Image()).src = 'images/check.svg';
 (new Image()).src = 'images/loading.webp';

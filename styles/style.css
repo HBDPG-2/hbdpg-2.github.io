@@ -421,10 +421,6 @@ main {
     to { opacity: 0.6; }
 }
 
-#clearNote {
-    color: #a0a0a0;
-}
-
 footer {
     left: 0;
     right: 0;

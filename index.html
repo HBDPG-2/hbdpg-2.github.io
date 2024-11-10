@@ -72,9 +72,7 @@
             <div class="blocks">
                 <strong class="blockTitles">Inputs</strong><br>
 
-                <!-- <span>Create and remember two strong passphrases that are at least <u>8 characters long</u>.</span><br> -->
-
-                <span>For optimal security, we recommend <u>using two distinct passphrases</u> when generating your password. 
+                <span>For optimal security, we recommend <u>using two distinct passphrases</u>. 
                     This helps ensure that even if one passphrase is compromised, your generated password remain secure. 
                     Try to choose phrases that are <u>memorable but unique to you</u>.</span><br><br>
                 <span>Each passphrase must be <u>at least 8 characters long</u>.</span><br>
@@ -114,9 +112,7 @@
                 </div>
 
                 <form id="passwordLengthForm">
-                    <label for="passwordLengthForm" id="passwordLengthLabel">
-                        <strong>Password length:</strong>
-                    </label><br>
+                    <strong id="passwordLengthLabel">Password length:</strong><br>
 
                     <label for="lite" class="passwordLengthRadioLabels">
                         <input id="lite" class="passwordLengthRadioButtons" type="radio" name="length" value="16">
@@ -162,7 +158,11 @@
                 </div>
                 <div class="buttonContainers">
                     <button id="clearButton" class="buttons mainButtons">Clear</button>
-                    <span id="clearNote">Clipboard and all fields will be cleared</span>
+                    <!-- <span id="clearNote">Clipboard and all fields will be cleared</span> -->
+                    <label id="clearClipboardCheckboxLabel" class="checkboxLabels">
+                        <input id="clearClipboardCheckbox" class="checkboxes" type="checkbox" checked>
+                        <span>Clear clipboard</span>
+                    </label>
                 </div>
             </div>
         </main>
