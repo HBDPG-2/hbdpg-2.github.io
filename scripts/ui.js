@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 elem.style.color = '#6a6a6a';
             }
         });
-        clearButton.setAttribute('disabled', 'disabled');
 
         core.postMessage({ message: 'generate', data: '' });
 
@@ -170,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showPasswordCheckboxLabel.style.pointerEvents = 'auto';
 
             copyButton.removeAttribute('disabled');
-            clearButton.removeAttribute('disabled');
             copyButton.focus();
         } else if (event.data.status === 'Error') {
             window.alert(event.data.error.message);

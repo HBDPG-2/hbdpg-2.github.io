@@ -142,7 +142,6 @@ main {
 
 .checkboxLabels {
     padding: 5px 5px 5px 0;
-    /* margin-top: 5px; */
     display: inline-flex;
     align-items: center;
     gap: 5px;
