@@ -207,6 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "Leaving your password in the clipboard could be a security risk.")) {
             event.target.checked = true;
         }
+
+        event.target.blur();
     });
 
     clearButton.addEventListener('click', function() {
