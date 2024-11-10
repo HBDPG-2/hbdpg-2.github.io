@@ -44,6 +44,11 @@ body {
     display: none;
 }
 
+/* Hide password reveal button in Microsoft Edge */
+::-ms-reveal {
+    display: none;
+}
+
 header {
     position: fixed;
     left: 0;
