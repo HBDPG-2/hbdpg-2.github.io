@@ -112,9 +112,7 @@
                 </div>
 
                 <form id="passwordLengthForm">
-                    <label for="passwordLengthForm" id="passwordLengthLabel">
-                        <strong>Password length:</strong>
-                    </label><br>
+                    <strong id="passwordLengthLabel">Password length:</strong><br>
 
                     <label for="lite" class="passwordLengthRadioLabels">
                         <input id="lite" class="passwordLengthRadioButtons" type="radio" name="length" value="16">
@@ -160,7 +158,11 @@
                 </div>
                 <div class="buttonContainers">
                     <button id="clearButton" class="buttons mainButtons">Clear</button>
-                    <span id="clearNote">Clipboard and all fields will be cleared</span>
+                    <!-- <span id="clearNote">Clipboard and all fields will be cleared</span> -->
+                    <label id="clearClipboardCheckboxLabel" class="checkboxLabels">
+                        <input id="clearClipboardCheckbox" class="checkboxes" type="checkbox" checked>
+                        <span>Clear clipboard</span>
+                    </label>
                 </div>
             </div>
         </main>
