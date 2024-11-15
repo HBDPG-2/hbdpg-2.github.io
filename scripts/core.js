@@ -146,18 +146,16 @@ function checkResult(password) {
     let minSpecialCharCount = 2;
     let minEntropy = 0.00;
 
-    switch (password.length) {
-        case 16:
+    switch (true) {
+        case password.length < 32:
             minEntropy = 60.00;
             break;
-        case 32:
+        case password.length < 64:
             minEntropy = 140.00;
             break;
-        case 64:
+        case password.length >= 64:
             minEntropy = 340.00;
             break;
-        default:
-            minEntropy = Infinity;
     }
 
     for (i = 0; i < password.length; i++) {
