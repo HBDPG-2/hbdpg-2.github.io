@@ -111,7 +111,7 @@ function getIndexes(hashNibbles, blockSize, shift) {
             }
         }
 
-        const blockShift = blockSum % blockSize;
+        let blockShift = blockSum % blockSize;
 
         if (i + blockShift < hashNibbles.length) {
             indexes[j % 2].push(hashNibbles[i + blockShift]);
@@ -163,17 +163,22 @@ function checkResult(password) {
     for (i = 0; i < password.length; i++) {
         uniqueChars.add(password[i]);
 
-        const charCode = password.charCodeAt(i);
+        let charCode = password.charCodeAt(i);
 
         // Check ASCII-codes
-        if (charCode >= 65 && charCode <= 90) {
-            upperCaseCount++;
-        } else if (charCode >= 97 && charCode <= 122) {
-            lowerCaseCount++;
-        } else if (charCode >= 48 && charCode <= 57) {
-            digitCount++;
-        } else {
-            specialCharCount++;
+        switch (true) {
+            case charCode >= 65 && charCode <= 90:
+                upperCaseCount++;
+                break;
+            case charCode >= 97 && charCode <= 122:
+                lowerCaseCount++;
+                break;
+            case charCode >= 48 && charCode <= 57:
+                digitCount++;
+                break;
+            default:
+                specialCharCount++;
+                break;
         }
     }
 
