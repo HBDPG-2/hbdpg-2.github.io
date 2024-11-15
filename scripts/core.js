@@ -55,7 +55,7 @@ function generate() {
             if (password !== null) {
                 resolve({password, entropy, elapsedTime});
             } else {
-                reject('Failed to generate secure password. Try other passphrases or choose a different password length.');
+                reject('Failed to generate secure password. Try other passphrases or password length.');
             }
         }).catch(error => {
             reject(error);
@@ -66,10 +66,10 @@ function generate() {
 }
 
 function getPassword(hash) {
-    let hashDecimals = hexToDecimal(hash.hashHex);
+    let hashNibbles = bytesToNibbles(hash.hash);
 
     for (let i = 0; i < 16; i++) {
-        let indexes = getIndexes(hashDecimals, 16, i);
+        let indexes = getIndexes(hashNibbles, 16, i);
         let password = getCharacters(indexes);
         
         if (checkResult(password) === true) {
@@ -82,26 +82,41 @@ function getPassword(hash) {
     return null;
 }
 
-function getIndexes(hashDecimals, blockSize, shift) {
+function bytesToNibbles(bytes) {
+    let nibbles = [];
+
+    bytes.forEach(byte => {
+        let highNibble = (byte >> 4) & 0x0F;
+        let lowNibble = byte & 0x0F;
+
+        nibbles.push(highNibble, lowNibble);
+    });
+
+    return nibbles;
+}
+
+function getIndexes(hashNibbles, blockSize, shift) {
     let indexes = [];
     indexes[0] = [];
     indexes[1] = [];
 
-    for(let i = 0 + shift, j = 0; i < hashDecimals.length; i += blockSize, j++) {
+    for(let i = 0 + shift, j = 0; i < hashNibbles.length; i += blockSize, j++) {
         let blockSum = 0;
 
         for(let y = i; y < i + blockSize; y++) {
-            if (y < hashDecimals.length) {
-                blockSum += hashDecimals[y];
+            if (y < hashNibbles.length) {
+                blockSum += hashNibbles[y];
             } else {
-                blockSum += hashDecimals[y - hashDecimals.length];
+                blockSum += hashNibbles[y - hashNibbles.length];
             }
         }
 
-        if (i + blockSum % blockSize < hashDecimals.length) {
-            indexes[j % 2].push(hashDecimals[i + blockSum % blockSize]);
+        let blockShift = blockSum % blockSize;
+
+        if (i + blockShift < hashNibbles.length) {
+            indexes[j % 2].push(hashNibbles[i + blockShift]);
         } else {
-            indexes[j % 2].push(hashDecimals[(i + blockSum % blockSize) - hashDecimals.length]);
+            indexes[j % 2].push(hashNibbles[i + blockShift - hashNibbles.length]);
         }
     }
 
@@ -119,7 +134,7 @@ function getCharacters(indexes) {
 }
 
 function checkResult(password) {
-    let uniqueChars = new Set();
+    const uniqueChars = new Set();
     let upperCaseCount = 0;
     let lowerCaseCount = 0;
     let digitCount = 0;
@@ -131,38 +146,43 @@ function checkResult(password) {
     let minSpecialCharCount = 2;
     let minEntropy = 0.00;
 
-    switch (password.length) {
-        case 16:
+    switch (true) {
+        case password.length < 32:
             minEntropy = 60.00;
             break;
-        case 32:
+        case password.length < 64:
             minEntropy = 140.00;
             break;
-        case 64:
+        case password.length >= 64:
             minEntropy = 340.00;
             break;
-        default:
-            minEntropy = Infinity;
     }
 
     for (i = 0; i < password.length; i++) {
         uniqueChars.add(password[i]);
 
-        if (/[A-Z]/.test(password[i])) {
-            upperCaseCount++;
-        } else if (/[a-z]/.test(password[i])) {
-            lowerCaseCount++;
-        } else if (/[0-9]/.test(password[i])) {
-            digitCount++;
-        } else {
-            specialCharCount++;
+        let charCode = password.charCodeAt(i);
+
+        // Check ASCII-codes
+        switch (true) {
+            case charCode >= 65 && charCode <= 90:
+                upperCaseCount++;
+                break;
+            case charCode >= 97 && charCode <= 122:
+                lowerCaseCount++;
+                break;
+            case charCode >= 48 && charCode <= 57:
+                digitCount++;
+                break;
+            default:
+                specialCharCount++;
+                break;
         }
     }
 
     entropy = password.length * Math.log2(uniqueChars.size);
 
-    if (
-        entropy >= minEntropy &&
+    if (entropy >= minEntropy &&
         upperCaseCount >= minUpperCaseCount &&
         lowerCaseCount >= minLowerCaseCount &&
         digitCount >= minDigitCount &&
@@ -172,17 +192,6 @@ function checkResult(password) {
     } else {
         return false;
     }
-}
-
-function hexToDecimal(hexString) {
-    let decimalArray = [];
-
-    for (let i = 0; i < hexString.length; i++) {
-        let hexChar = hexString.charAt(i);
-        decimalArray.push(parseInt(hexChar, 16));
-    }
-
-    return decimalArray;
 }
 
 let entropy = 0.00;

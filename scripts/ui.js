@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
             copyButton.removeAttribute('disabled');
             copyButton.focus();
         } else if (event.data.status === 'Error') {
-            window.alert(event.data.error.message);
+            window.alert(event.data.error);
 
             generateButton.innerHTML = '<b>Error!</b>';
             generateButton.style.color = '#990000';
