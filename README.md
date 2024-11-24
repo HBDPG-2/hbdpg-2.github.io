@@ -1,8 +1,8 @@
 # HBDPG-2
 
-<p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/logo-icon-beta.png" alt="Project Logo" width="300px"></a></p>
+<p align="center"><a href="https://hbdpg-2.github.io/"><img src="pictures/logo-icon-beta.png" alt="Project Logo" width="300px"></a></p>
 
-<p align="center"><a href="https://piotr-kniaz.github.io/HBDPG-2/"><img src="pictures/button.png" alt="Try HBDPG-2 now!" width="300px"></a></p>
+<p align="center"><a href="https://hbdpg-2.github.io/"><img src="pictures/button.png" alt="Try HBDPG-2 now!" width="300px"></a></p>
 
 <p align="center"><i><b>HBDPG-2</b> is incompatible with HBDPG-1</i></p>
 
@@ -53,7 +53,7 @@ Please choose **one** of the following usage options:
 
 ### Run in browser
 
-You can use HBDPG-2 via browser by following this link: https://piotr-kniaz.github.io/HBDPG-2/
+You can use HBDPG-2 via browser by following this link: https://hbdpg-2.github.io/
 
 ### Install application (recommended)
 
@@ -61,7 +61,7 @@ You can use HBDPG-2 via browser by following this link: https://piotr-kniaz.gith
 
 You can install HBDPG-2 as Progressive Web App to have quick access from your Home Screen or Desktop.
 
-1. Open https://piotr-kniaz.github.io/HBDPG-2/ in your browser.
+1. Open https://hbdpg-2.github.io/ in your browser.
 2. In the browser menu, choose `Install HBDPG-2`:
     * On MacOS (Safari): `File` => `Add to Dock...`
     * On iOS (Safari): `Share` => `Add to Home Screen`
@@ -76,7 +76,7 @@ HBDPG-2 uses WebAssembly, which does not work if you just open `index.html` as a
 2. Download and install Git (optional): https://git-scm.com/
 2. Open VS Code and go to the `Extensions` section
 3. Search and install `Live Server` by Ritwick Dey
-4. Download HBDPG-2 source code from GitHub ([download link](https://github.com/Piotr-Kniaz/HBDPG-2/archive/refs/heads/master.zip)) or via Terminal: `git clone https://github.com/Piotr-Kniaz/HBDPG-2.git` (installed Git required)
+4. Download HBDPG-2 source code from GitHub ([download link](https://github.com/HBDPG-2/hbdpg-2.github.io/archive/refs/heads/master.zip)) or via Terminal: `git clone https://github.com/HBDPG-2/hbdpg-2.github.io.git` (installed Git required)
 5. Unzip files *(if it's an archive)*
 6. Open HBDPG-2 folder in VS Code (`File` => `Open Folder...`)
 7. Press `Go Live` button at the bottom of the window
@@ -143,11 +143,11 @@ The main risk of using HBDPG-2 is the ability of an attacker to brute-force simp
 
 ## Feedback
 
-You can give feedback, ask a question or suggest an improvement on [this page](https://github.com/Piotr-Kniaz/HBDPG-2/discussions).
+You can give feedback, ask a question or suggest an improvement on [this page](https://github.com/HBDPG-2/hbdpg-2.github.io/discussions).
 
-If you find a bug, you can report it on [this page](https://github.com/Piotr-Kniaz/HBDPG-2/issues).
+If you find a bug, you can report it on [this page](https://github.com/HBDPG-2/hbdpg-2.github.io/issues).
 
-If you have discovered a vulnerability, please read the [Security Policy](https://github.com/Piotr-Kniaz/HBDPG-2/security) and report the issue **privately!**
+If you have discovered a vulnerability, please read the [Security Policy](https://github.com/HBDPG-2/hbdpg-2.github.io/security) and report the issue **privately!**
 
 
 
@@ -159,6 +159,6 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 ---
 
-<p align="center"><a href="https://github.com/Piotr-Kniaz/HBDPG-2/blob/master/LICENSE">MIT License</a></p>
+<p align="center"><a href="https://github.com/HBDPG-2/hbdpg-2.github.io/blob/master/LICENSE">MIT License</a></p>
 
 <p align="center">© 2024 Piotr Kniaz</p>
