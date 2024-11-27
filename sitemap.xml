@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Icons -->
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/icon-512.png</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/icon-256.png</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/icon-128.png</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/icon-120.png</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/favicon-128.ico</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://hbdpg-2.github.io/images/icons/apple-touch-icon-512.png</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Manifest -->
+    <url>
+        <loc>https://hbdpg-2.github.io/manifest.webmanifest</loc>
+        <lastmod>2024-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>
