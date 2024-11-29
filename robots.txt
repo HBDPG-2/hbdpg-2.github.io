@@ -1,5 +1,4 @@
 Sitemap: https://hbdpg-2.github.io/sitemap.xml
 
 User-agent: *
-Allow: /sitemap.xml
-Allow: /images/icons/
+Allow: /
