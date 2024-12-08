@@ -190,17 +190,19 @@
         </footer>
 
         <dialog id="alertBox" class="dialogs">
-            <span class="dialogTitles"><b>Error</b></span>
-            <span id="errorDetails"></span>
+            <span class="dialogTitles"><b id="alertTitle"></b></span>
+            <span id="alertDetails"></span>
 
-            <button id="" class="buttons">OK</button>
+            <div class="dialogButtonsContainers">
+                <button id="closeAlertButton" class="dialogButtons">Close</button>
+            </div>
         </dialog>
 
         <dialog id="confirmDontClearClipboardDialogBox" class="dialogs">
             <span class="dialogTitles"><b>Are you sure you don't want to clear the clipboard?</b></span>
             <span>Leaving your password in the clipboard could be a <u>security risk</u>.</span>
 
-            <div style="display: flex; justify-content: flex-end;">
+            <div class="dialogButtonsContainers">
                 <button id="dontClearClipboardCancelButton" class="dialogButtons">Cancel</button>
                 <button id="dontClearClipboardConfirmButton" class="dialogButtons">Confirm</button>
             </div>

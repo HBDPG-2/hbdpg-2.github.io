@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase2Input.type = 'password';
             passphrase2Input.focus();
         } else {
-            window.alert('Use at least 8 characters!');
+            showAlertBox('Use at least 8 characters!', '');
             passphrase1Input.focus();
         }
     });
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: "smooth"
             });
         } else {
-            window.alert('Use at least 8 characters!');
+            showAlertBox('Use at least 8 characters!', '');
             passphrase2Input.focus();
         }
     });
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             copyButton.removeAttribute('disabled');
             copyButton.focus();
         } else if (event.data.status === 'Error') {
-            window.alert(event.data.error);
+            showAlertBox('Error', event.data.error);
 
             generateButton.innerHTML = '<b>Error!</b>';
             generateButton.style.color = '#990000';
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     core.onerror = function(error) {
-        window.alert(error.message);
+        showAlertBox('Error', error.message);
 
         generateButton.innerHTML = '<b>Error!</b>';
         generateButton.style.color = '#990000';
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
         clearClipboardCheckbox.focus();
-        
+
         if (clearClipboardCheckbox.checked) {
             event.preventDefault();
             confirmDontClearClipboardDialogBox.showModal();
@@ -259,7 +259,20 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmDontClearClipboardDialogBox.close();
         clearClipboardCheckbox.blur();
     });
+
+    closeAlertButton.addEventListener('click', function() {
+        alertBox.close();
+    });
 });
+
+function showAlertBox(alertTitle, alertDetails) {
+    const alertBox = document.getElementById('alertBox');
+
+    document.getElementById('alertTitle').innerHTML = alertTitle;
+    document.getElementById('alertDetails').innerHTML = alertDetails;
+
+    alertBox.showModal();
+}
 
 const form1 = document.getElementById('passphrase1Form');
 const form2 = document.getElementById('passphrase2Form');
@@ -285,6 +298,7 @@ const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
 // Dialogs
+const closeAlertButton = document.getElementById('closeAlertButton');
 const confirmDontClearClipboardDialogBox = document.getElementById('confirmDontClearClipboardDialogBox');
 const dontClearClipboardCancelButton = document.getElementById('dontClearClipboardCancelButton');
 const dontClearClipboardConfirmButton = document.getElementById('dontClearClipboardConfirmButton');

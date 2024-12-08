@@ -442,6 +442,7 @@ main {
     border-radius: 15px;
     outline: none;
 
+    /* min-width: 250px; */
     max-width: 80%;
 
     user-select: none;
@@ -460,6 +461,11 @@ main {
 .dialogTitles {
     display: block;
     margin-bottom: 10px;
+}
+
+.dialogButtonsContainers {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .dialogButtons {
