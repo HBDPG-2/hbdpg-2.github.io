@@ -241,21 +241,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
+        clearClipboardCheckbox.focus();
+        
         if (clearClipboardCheckbox.checked) {
             event.preventDefault();
             confirmDontClearClipboardDialogBox.showModal();
         }
-
-        clearClipboardCheckbox.blur();
     });
 
     dontClearClipboardCancelButton.addEventListener('click', function() {
         confirmDontClearClipboardDialogBox.close();
+        clearClipboardCheckbox.blur();
     });
 
     dontClearClipboardConfirmButton.addEventListener('click', function() {
         clearClipboardCheckbox.checked = false;
         confirmDontClearClipboardDialogBox.close();
+        clearClipboardCheckbox.blur();
     });
 });
 
