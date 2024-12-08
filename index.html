@@ -189,6 +189,23 @@
             <a id="GitHubLink" href="https://github.com/HBDPG-2/hbdpg-2.github.io" target="_blank" rel="noopener noreferrer">Learn more on GitHub</a>
         </footer>
 
+        <dialog id="alertBox" class="dialogs">
+            <span class="dialogTitles"><b>Error</b></span>
+            <span id="errorDetails"></span>
+
+            <button id="" class="buttons">OK</button>
+        </dialog>
+
+        <dialog id="confirmDontClearClipboardDialogBox" class="dialogs">
+            <span class="dialogTitles"><b>Are you sure you don't want to clear the clipboard?</b></span>
+            <span>Leaving your password in the clipboard could be a security risk.</span>
+
+            <div class="">
+                <button id="dontClearClipboardCancelButton" class="buttons dialogButtons">Cancel</button>
+                <button id="dontClearClipboardConfirmButton" class="buttons dialogButtons">Confirm</button>
+            </div>
+        </dialog>
+
         <script src="scripts/ui.js"></script>
     </body>
 </html>

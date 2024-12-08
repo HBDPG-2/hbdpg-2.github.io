@@ -210,15 +210,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clearButton.focus();
     });
 
-    clearClipboardCheckbox.addEventListener('change', (event) => {
-        if (!event.target.checked && !window.confirm("Are you sure you don't want to clear the clipboard?\n" +
-            "Leaving your password in the clipboard could be a security risk.")) {
-            event.target.checked = true;
-        }
-
-        event.target.blur();
-    });
-
     clearButton.addEventListener('click', function() {
         if (clearClipboardCheckbox.checked) {
             navigator.clipboard.writeText('');
@@ -248,6 +239,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         requestAnimationFrame(checkIfScrollingFinished);
     });
+
+    clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
+        if (clearClipboardCheckbox.checked) {
+            event.preventDefault();
+            confirmDontClearClipboardDialogBox.showModal();
+        }
+
+        clearClipboardCheckbox.blur();
+    });
+
+    dontClearClipboardCancelButton.addEventListener('click', function() {
+        confirmDontClearClipboardDialogBox.close();
+    });
+
+    dontClearClipboardConfirmButton.addEventListener('click', function() {
+        clearClipboardCheckbox.checked = false;
+        confirmDontClearClipboardDialogBox.close();
+    });
 });
 
 const form1 = document.getElementById('passphrase1Form');
@@ -269,9 +278,14 @@ const copyButton = document.getElementById('copyButton');
 const clearButton = document.getElementById('clearButton');
 const generateNote = document.getElementById('generateNote');
 const clearClipboardCheckbox = document.getElementById('clearClipboardCheckbox');
+const clearClipboardCheckboxLabel = document.getElementById('clearClipboardCheckboxLabel');
 const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
+// Dialogs
+const confirmDontClearClipboardDialogBox = document.getElementById('confirmDontClearClipboardDialogBox');
+const dontClearClipboardCancelButton = document.getElementById('dontClearClipboardCancelButton');
+const dontClearClipboardConfirmButton = document.getElementById('dontClearClipboardConfirmButton');
 
 // Preload images
 (new Image()).src = 'images/loading.webp';
