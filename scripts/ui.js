@@ -1,3 +1,11 @@
+/*  (c) 2024 Piotr Kniaz
+
+    This file is part of HBDPG-2.
+    Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
+
+    Licensed under the MIT License. See LICENSE file in the project root for details.
+*/
+
 document.addEventListener('DOMContentLoaded', function() {
     // Console warning
     console.log('%cWARNING!', 'font-size: 28px; color: #ffff00; background-color: #ff0000;');
@@ -58,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase2Input.type = 'password';
             passphrase2Input.focus();
         } else {
-            window.alert('Use at least 8 characters!');
+            showAlertBox('Use at least 8 characters!', '');
             passphrase1Input.focus();
         }
     });
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: "smooth"
             });
         } else {
-            window.alert('Use at least 8 characters!');
+            showAlertBox('Use at least 8 characters!', '');
             passphrase2Input.focus();
         }
     });
@@ -172,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             copyButton.removeAttribute('disabled');
             copyButton.focus();
         } else if (event.data.status === 'Error') {
-            window.alert(event.data.error);
+            showAlertBox('Error', event.data.error);
 
             generateButton.innerHTML = '<b>Error!</b>';
             generateButton.style.color = '#990000';
@@ -185,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     core.onerror = function(error) {
-        window.alert(error.message);
+        showAlertBox('Error', error.message);
 
         generateButton.innerHTML = '<b>Error!</b>';
         generateButton.style.color = '#990000';
@@ -200,15 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navigator.clipboard.writeText(result.value);
         this.innerHTML = 'Copied';
         clearButton.focus();
-    });
-
-    clearClipboardCheckbox.addEventListener('change', (event) => {
-        if (!event.target.checked && !window.confirm("Are you sure you don't want to clear the clipboard?\n" +
-            "Leaving your password in the clipboard could be a security risk.")) {
-            event.target.checked = true;
-        }
-
-        event.target.blur();
     });
 
     clearButton.addEventListener('click', function() {
@@ -240,7 +239,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
         requestAnimationFrame(checkIfScrollingFinished);
     });
+
+    clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
+        clearClipboardCheckbox.focus();
+
+        if (clearClipboardCheckbox.checked) {
+            event.preventDefault();
+            confirmDontClearClipboardDialogBox.showModal();
+        }
+    });
+
+    dontClearClipboardCancelButton.addEventListener('click', function() {
+        confirmDontClearClipboardDialogBox.close();
+        clearClipboardCheckbox.blur();
+    });
+
+    dontClearClipboardConfirmButton.addEventListener('click', function() {
+        clearClipboardCheckbox.checked = false;
+        confirmDontClearClipboardDialogBox.close();
+        clearClipboardCheckbox.blur();
+    });
+
+    closeAlertButton.addEventListener('click', function() {
+        alertBox.close();
+    });
 });
+
+function showAlertBox(alertTitle, alertDetails) {
+    const alertBox = document.getElementById('alertBox');
+
+    document.getElementById('alertTitle').innerHTML = alertTitle;
+    document.getElementById('alertDetails').innerHTML = alertDetails;
+
+    alertBox.showModal();
+}
 
 const form1 = document.getElementById('passphrase1Form');
 const form2 = document.getElementById('passphrase2Form');
@@ -261,9 +293,15 @@ const copyButton = document.getElementById('copyButton');
 const clearButton = document.getElementById('clearButton');
 const generateNote = document.getElementById('generateNote');
 const clearClipboardCheckbox = document.getElementById('clearClipboardCheckbox');
+const clearClipboardCheckboxLabel = document.getElementById('clearClipboardCheckboxLabel');
 const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
+// Dialogs
+const closeAlertButton = document.getElementById('closeAlertButton');
+const confirmDontClearClipboardDialogBox = document.getElementById('confirmDontClearClipboardDialogBox');
+const dontClearClipboardCancelButton = document.getElementById('dontClearClipboardCancelButton');
+const dontClearClipboardConfirmButton = document.getElementById('dontClearClipboardConfirmButton');
 
 // Preload images
 (new Image()).src = 'images/loading.webp';

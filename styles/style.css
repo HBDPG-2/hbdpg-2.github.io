@@ -1,3 +1,11 @@
+/*  (c) 2024 Piotr Kniaz
+
+    This file is part of HBDPG-2.
+    Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
+
+    Licensed under the MIT License. See LICENSE file in the project root for details.
+*/
+
 * {
     scroll-behavior: smooth;
 }
@@ -424,6 +432,83 @@ main {
 @keyframes pulsateAnimation {
     from { opacity: 1; }
     to { opacity: 0.6; }
+}
+
+.dialogs {
+    background-color: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(40, 40, 40, 0.6);
+    border-radius: 15px;
+    outline: none;
+
+    /* min-width: 250px; */
+    max-width: 80%;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    padding: 10px;
+
+    color: white;
+}
+
+.dialogs::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialogTitles {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dialogButtonsContainers {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dialogButtons {
+    font-size: 1rem;
+    height: 30px;
+    width: 100px;
+
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    margin-left: 10px;
+    margin-top: 20px;
+
+    border-radius: 25px;
+    border: 2px solid rgba(80, 80, 80, 0.6);
+    background: none;
+    cursor: pointer;
+
+    color: white;
+
+    transition: transform 50ms;
+}
+
+#dontClearClipboardConfirmButton {
+    color: #ff4539;
+    border: 2px solid rgba(255, 45, 39, 0.6);
+}
+
+/* For non-touchscreen devices */
+@media (hover: hover) and (pointer: fine) {
+    .dialogButtons:hover {
+        border: 2px solid rgba(80, 80, 80, 0.8);
+    }
+
+    #dontClearClipboardConfirmButton:hover {
+        border: 2px solid rgba(255, 45, 39, 0.8);
+    }
+
+    .dialogButtons:active {
+        transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+    }
 }
 
 footer {

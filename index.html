@@ -1,3 +1,10 @@
+<!-- (c) 2024 Piotr Kniaz
+
+    This file is part of HBDPG-2.
+    Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
+
+    Licensed under the MIT License. See LICENSE file in the project root for details. -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -115,7 +122,7 @@
             </div>
 
             <div class="blocks">
-                <strong class="blockTitles">Advanced features</strong><br>
+                <strong class="blockTitles">Settings</strong><br>
                 
                 <div>
                     <span><strong>Warning!</strong> Changing these parameters affects the generation! <u>Remember your changes</u> to get the same password next time.</span>
@@ -181,6 +188,25 @@
             <span>© 2024 Piotr Kniaz</span><br>
             <a id="GitHubLink" href="https://github.com/HBDPG-2/hbdpg-2.github.io" target="_blank" rel="noopener noreferrer">Learn more on GitHub</a>
         </footer>
+
+        <dialog id="alertBox" class="dialogs">
+            <span class="dialogTitles"><b id="alertTitle"></b></span>
+            <span id="alertDetails"></span>
+
+            <div class="dialogButtonsContainers">
+                <button id="closeAlertButton" class="dialogButtons">Close</button>
+            </div>
+        </dialog>
+
+        <dialog id="confirmDontClearClipboardDialogBox" class="dialogs">
+            <span class="dialogTitles"><b>Are you sure you don't want to clear the clipboard?</b></span>
+            <span>Leaving your password in the clipboard could be a <u>security risk</u>.</span>
+
+            <div class="dialogButtonsContainers">
+                <button id="dontClearClipboardCancelButton" class="dialogButtons">Cancel</button>
+                <button id="dontClearClipboardConfirmButton" class="dialogButtons">Confirm</button>
+            </div>
+        </dialog>
 
         <script src="scripts/ui.js"></script>
     </body>
