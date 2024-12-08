@@ -1,3 +1,11 @@
+/*  (c) 2024 Piotr Kniaz
+
+    This file is part of HBDPG-2.
+    Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
+
+    Licensed under the MIT License. See LICENSE file in the project root for details.
+*/
+
 document.addEventListener('DOMContentLoaded', function() {
     // Console warning
     console.log('%cWARNING!', 'font-size: 28px; color: #ffff00; background-color: #ff0000;');
