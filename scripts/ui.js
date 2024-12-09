@@ -66,8 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase2Input.type = 'password';
             passphrase2Input.focus();
         } else {
-            showAlertBox('Use at least 8 characters!', '');
-            passphrase1Input.focus();
+            showAlertBox('Use at least 8 characters', '');
         }
     });
 
@@ -95,8 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: "smooth"
             });
         } else {
-            showAlertBox('Use at least 8 characters!', '');
-            passphrase2Input.focus();
+            showAlertBox('Use at least 8 characters', '');
         }
     });
 
@@ -262,6 +260,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeAlertButton.addEventListener('click', function() {
         alertBox.close();
+    });
+
+    alertBox.addEventListener('close', function() {
+        passphrase1Input.focus();
+        passphrase2Input.focus();
     });
 });
 
