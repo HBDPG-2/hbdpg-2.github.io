@@ -6,6 +6,13 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
+// Apply custom scrollbar
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if (!isSafari) {
+    document.body.classList.add('custom-scrollbar');
+}
+// End apply custom scrollbar
+
 document.addEventListener('DOMContentLoaded', function() {
     // Console warning
     console.log('%cWARNING!', 'font-size: 28px; color: #ffff00; background-color: #ff0000;');
@@ -33,13 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     clearClipboardCheckbox.checked = true;
     // End Firefox reload fix
-
-    // Apply custom scrollbar
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (!isSafari) {
-        document.body.classList.add('custom-scrollbar');
-    }
-    // End apply custom scrollbar
 
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -308,3 +308,30 @@ const dontClearClipboardConfirmButton = document.getElementById('dontClearClipbo
 
 // Preload images
 (new Image()).src = 'images/loading.webp';
+
+// Service Worker registration
+const registerServiceWorker = async () => {
+    if ('serviceWorker' in navigator) {
+        try {
+            const registration = await navigator.serviceWorker.register(
+                './serviceworker.js',
+                {
+                    scope: './',
+                }
+            );
+
+            // debug
+            if (registration.installing) {
+                console.log('Service worker installing');
+            } else if (registration.waiting) {
+                console.log('Service worker installed');
+            } else if (registration.active) {
+                console.log('Service worker active');
+            }
+        } catch (error) {
+            console.error(`Service Worker registration failed with ${error}`);
+        }
+    }
+};
+  
+registerServiceWorker();

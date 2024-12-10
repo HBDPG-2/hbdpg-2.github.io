@@ -73,7 +73,7 @@
     }
 
     function loadWasmModule() {
-        return import('./argon2/argon2.js');
+        return importScripts('./argon2/argon2.js');
     }
 
     function loadWasmBinary() {
