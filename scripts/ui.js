@@ -209,33 +209,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     clearButton.addEventListener('click', function() {
-        if (clearClipboardCheckbox.checked) {
-            navigator.clipboard.writeText('');
-        }
-
         clearButton.blur();
-
-        // if scrolling will be not finished
-        setTimeout(() => {
-            document.location.reload(true);
-        }, 2000);
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        const checkIfScrollingFinished = () => {
-            if (window.scrollY === 0) {
-                document.location.reload(true);
-            } else {
-                setTimeout(() => {
-                    requestAnimationFrame(checkIfScrollingFinished);
-                }, 50);
-            }
-        };
-
-        requestAnimationFrame(checkIfScrollingFinished);
+        reloadPage(clearClipboardCheckbox.checked);
     });
 
     clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
@@ -271,6 +246,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Functions
 
+function reloadPage(clearClipboard) {
+    if (clearClipboard) {
+        navigator.clipboard.writeText('');
+    }
+
+    setTimeout(() => {
+        document.location.reload(true);
+    }, 2000);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    const checkIfScrollingFinished = () => {
+        if (window.scrollY === 0) {
+            document.location.reload(true);
+        } else {
+            setTimeout(() => {
+                requestAnimationFrame(checkIfScrollingFinished);
+            }, 50);
+        }
+    };
+
+    requestAnimationFrame(checkIfScrollingFinished);
+}
+
 function showAlertBox(alertTitle, alertDetails) {
     const alertBox = document.getElementById('alertBox');
 
@@ -280,9 +282,12 @@ function showAlertBox(alertTitle, alertDetails) {
     alertBox.showModal();
 }
 
-function showUpdateAlert() {
-    // updateAlert.style.transform = 'translateY(80px)';
-    updateAlert.style.animation = 'updateAlertAnimation 300ms ease';
-    updateAlert.show();
-    
+function showUpdateNotification(worker) {
+    updateNotification.style.animation = 'updateNotificationAnimation 300ms ease';
+    updateNotification.show();
+
+    updateButton.addEventListener('click', () => {
+        updateButton.setAttribute('disabled', 'disabled');
+        updateServiceWorker(worker);
+    });
 }

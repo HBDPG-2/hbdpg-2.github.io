@@ -9,28 +9,37 @@
 const registerServiceWorker = async () => {
     if ('serviceWorker' in navigator) {
         try {
-            const registration = await navigator.serviceWorker.register(
-                './serviceworker.js',
-                {
-                    scope: './',
-                }
-            );
+            const registration = await navigator.serviceWorker.register('./serviceworker.js', { scope: './' } );
 
-            // debug
-            if (registration.installing) {
-                console.log('Service worker installing');
-            } else if (registration.waiting) {
-                console.log('Service worker installed');
-            } else if (registration.active) {
-                console.log('Service worker active');
+            if (registration.waiting) {
+                showUpdateNotification(registration.waiting);
             }
+
+            registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing || registration.waiting;
+    
+                if (newWorker) {
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed') {
+                            showUpdateNotification(newWorker);
+                        }
+                    });
+                }
+            });
         } catch (error) {
             console.error(`Service Worker registration failed with ${error}`);
         }
-    } else {
-        // debug
-        window.alert('SW is not in Navigator');
     }
 };
-  
-// registerServiceWorker();
+
+registerServiceWorker();
+
+function updateServiceWorker(worker) {
+    worker.postMessage({ type: 'SKIP_WAITING' });
+
+    worker.addEventListener('statechange', () => {
+        if (worker.state === 'activated') {
+            reloadPage(false);
+        }
+    });
+}

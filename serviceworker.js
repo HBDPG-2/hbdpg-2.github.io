@@ -11,7 +11,6 @@ const CACHE_VERSION = 'v1';
 const ASSETS = [
     '/',
     '/index.html',
-    // '/manifest.webmanifest',
     '/favicon.ico',
     '/images/Logo-beta.webp',
     '/images/check.svg',
@@ -19,6 +18,7 @@ const ASSETS = [
     '/styles/style.css',
     '/scripts/ui-items.js',
     '/scripts/ui.js',
+    '/scripts/updater.js',
     '/scripts/core.js',
     '/scripts/argon2.js',
     '/scripts/argon2/argon2.js',
@@ -28,7 +28,6 @@ const ASSETS = [
 
 self.addEventListener('install', event => {
     event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(ASSETS)));
-    // self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
@@ -45,6 +44,12 @@ self.addEventListener('activate', event => {
     );
 
     self.clients.claim();
+});
+
+self.addEventListener('message', event => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
 });
 
 self.addEventListener('fetch', event => {

@@ -34,7 +34,7 @@ const closeAlertButton = document.getElementById('closeAlertButton');
 const confirmDontClearClipboardDialogBox = document.getElementById('confirmDontClearClipboardDialogBox');
 const dontClearClipboardCancelButton = document.getElementById('dontClearClipboardCancelButton');
 const dontClearClipboardConfirmButton = document.getElementById('dontClearClipboardConfirmButton');
-const updateAlert = document.getElementById('updateAlert');
+const updateNotification = document.getElementById('updateNotification');
 const updateButton = document.getElementById('updateButton');
 
 // Preload images
