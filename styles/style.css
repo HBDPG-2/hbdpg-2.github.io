@@ -78,6 +78,22 @@ header {
     pointer-events: none;
 }
 
+#updateAlert {
+    z-index: 500;
+    position: fixed;
+    transform: translateY(80px);
+    /* animation: updateAlertAnimation 300ms ease; */
+}
+
+@keyframes updateAlertAnimation {
+    from { transform: translateY(-80px); }
+    to { transform: translateY(80px); }
+}
+
+#updateButton {
+    margin-top: 0;
+}
+
 main {
     padding-top: 80px;
     margin-left:auto;

@@ -11,11 +11,13 @@ const CACHE_VERSION = 'v1';
 const ASSETS = [
     '/',
     '/index.html',
+    // '/manifest.webmanifest',
     '/favicon.ico',
     '/images/Logo-beta.webp',
     '/images/check.svg',
     '/images/loading.webp',
     '/styles/style.css',
+    '/scripts/ui-items.js',
     '/scripts/ui.js',
     '/scripts/core.js',
     '/scripts/argon2.js',
