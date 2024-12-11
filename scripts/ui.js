@@ -287,7 +287,11 @@ function showUpdateNotification(worker) {
     updateNotification.show();
 
     updateButton.addEventListener('click', () => {
-        updateButton.setAttribute('disabled', 'disabled');
-        updateServiceWorker(worker);
+        if (worker.state === 'activated') {
+            updateNotification.close();
+        } else {
+            updateButton.setAttribute('disabled', 'disabled');
+            updateServiceWorker(worker);
+        }
     });
 }
