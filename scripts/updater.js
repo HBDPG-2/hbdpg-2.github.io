@@ -20,7 +20,7 @@ const registerServiceWorker = async () => {
     
                 if (newWorker) {
                     newWorker.addEventListener('statechange', () => {
-                        if (newWorker.state === 'installed') {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                             showUpdateNotification(newWorker);
                         }
                     });

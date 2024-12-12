@@ -6,11 +6,13 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v20241212-0';
+// const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [
     '/',
     '/index.html',
+    '/manifest.webmanifest',
     '/favicon.ico',
     '/images/Logo-beta.webp',
     '/images/check.svg',
