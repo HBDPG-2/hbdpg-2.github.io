@@ -6,7 +6,7 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v20241213-2';
+const CACHE_VERSION = 'v20241213-3';
 // const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [
@@ -30,7 +30,29 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', event => {
-    event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(ASSETS)));
+    event.waitUntil(async function () {
+        try {
+            const cache = await caches.open(CACHE_VERSION);
+
+            await Promise.all(
+                ASSETS.map(async asset => {
+                    const request = new Request(asset, {
+                        headers: { 'Cache-Control': 'no-cache' }
+                    });
+
+                    const response = await fetch(request);
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${asset}: ${response.statusText}`);
+                    }
+
+                    await cache.put(asset, response);
+                })
+            );
+        } catch (error) {
+            console.error('Caching failed: ', error);
+        }
+    }());
 });
 
 self.addEventListener('activate', event => {
