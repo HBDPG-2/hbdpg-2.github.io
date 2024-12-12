@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
             elem.style.pointerEvents = 'none';
             let radioButton = document.getElementById(elem.getAttribute('for'));
             if (!radioButton.checked) {
-                elem.style.color = '#202020';
+                elem.style.color = '#404040';
             } else {
-                elem.style.color = '#6a6a6a';
+                elem.style.color = '#8a8a8a';
             }
         });
 
