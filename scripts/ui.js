@@ -6,6 +6,13 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
+// Apply custom scrollbar
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if (!isSafari) {
+    document.body.classList.add('custom-scrollbar');
+}
+// End apply custom scrollbar
+
 document.addEventListener('DOMContentLoaded', function() {
     // Console warning
     console.log('%cWARNING!', 'font-size: 28px; color: #ffff00; background-color: #ff0000;');
@@ -33,13 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     clearClipboardCheckbox.checked = true;
     // End Firefox reload fix
-
-    // Apply custom scrollbar
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (!isSafari) {
-        document.body.classList.add('custom-scrollbar');
-    }
-    // End apply custom scrollbar
 
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -209,33 +209,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     clearButton.addEventListener('click', function() {
-        if (clearClipboardCheckbox.checked) {
-            navigator.clipboard.writeText('');
-        }
-
         clearButton.blur();
-
-        // if scrolling will be not finished
-        setTimeout(() => {
-            document.location.reload(true);
-        }, 2000);
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        const checkIfScrollingFinished = () => {
-            if (window.scrollY === 0) {
-                document.location.reload(true);
-            } else {
-                setTimeout(() => {
-                    requestAnimationFrame(checkIfScrollingFinished);
-                }, 50);
-            }
-        };
-
-        requestAnimationFrame(checkIfScrollingFinished);
+        reloadPage(clearClipboardCheckbox.checked);
     });
 
     clearClipboardCheckboxLabel.addEventListener('mousedown', (event) => {
@@ -268,6 +243,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// Functions
+
+function reloadPage(clearClipboard) {
+    if (clearClipboard) {
+        navigator.clipboard.writeText('');
+    }
+
+    setTimeout(() => {
+        document.location.reload(true);
+    }, 2000);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    const checkIfScrollingFinished = () => {
+        if (window.scrollY === 0) {
+            document.location.reload(true);
+        } else {
+            setTimeout(() => {
+                requestAnimationFrame(checkIfScrollingFinished);
+            }, 50);
+        }
+    };
+
+    requestAnimationFrame(checkIfScrollingFinished);
+}
+
 function showAlertBox(alertTitle, alertDetails) {
     const alertBox = document.getElementById('alertBox');
 
@@ -277,34 +282,12 @@ function showAlertBox(alertTitle, alertDetails) {
     alertBox.showModal();
 }
 
-const form1 = document.getElementById('passphrase1Form');
-const form2 = document.getElementById('passphrase2Form');
-const passphrase1Input = document.getElementById('passphrase1Input');
-const passphrase2Input = document.getElementById('passphrase2Input');
-const showPassphrase1Checkbox = document.getElementById('showPassphrase1Checkbox');
-const showPassphrase2Checkbox = document.getElementById('showPassphrase2Checkbox');
-const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
-const showPassphrase1CheckboxLabel = document.getElementById('showPassphrase1CheckboxLabel');
-const showPassphrase2CheckboxLabel = document.getElementById('showPassphrase2CheckboxLabel');
-const showPasswordCheckboxLabel = document.getElementById('showPasswordCheckboxLabel');
-const passwordLengthRadioLabels = document.querySelectorAll('.passwordLengthRadioLabels');
-const passwordLengthChoice = document.getElementsByName('length');
-const nextButton = document.getElementById('nextButton');
-const confirmButton = document.getElementById('confirmButton');
-const generateButton = document.getElementById('generateButton');
-const copyButton = document.getElementById('copyButton');
-const clearButton = document.getElementById('clearButton');
-const generateNote = document.getElementById('generateNote');
-const clearClipboardCheckbox = document.getElementById('clearClipboardCheckbox');
-const clearClipboardCheckboxLabel = document.getElementById('clearClipboardCheckboxLabel');
-const result = document.getElementById('result');
-const timeCount = document.getElementById('timeCount');
-const entropyCount = document.getElementById('entropyCount');
-// Dialogs
-const closeAlertButton = document.getElementById('closeAlertButton');
-const confirmDontClearClipboardDialogBox = document.getElementById('confirmDontClearClipboardDialogBox');
-const dontClearClipboardCancelButton = document.getElementById('dontClearClipboardCancelButton');
-const dontClearClipboardConfirmButton = document.getElementById('dontClearClipboardConfirmButton');
+function showUpdateNotification(worker) {
+    updateNotification.style.animation = 'updateNotificationAnimation 300ms ease';
+    updateNotification.show();
 
-// Preload images
-(new Image()).src = 'images/loading.webp';
+    updateButton.addEventListener('click', () => {
+        updateButton.setAttribute('disabled', 'disabled');
+        updateServiceWorker(worker);
+    });
+}

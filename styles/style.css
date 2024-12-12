@@ -78,6 +78,30 @@ header {
     pointer-events: none;
 }
 
+#updateNotification {
+    z-index: 500;
+    position: fixed;
+    transform: translateY(80px);
+    /* animation: updateNotificationAnimation 300ms ease; */
+}
+
+@keyframes updateNotificationAnimation {
+    from { transform: translateY(-80px); }
+    to { transform: translateY(80px); }
+}
+
+#updateButton {
+    margin-top: 0;
+}
+
+#updateButton:disabled {
+    border: 2px solid #202020;
+    cursor: auto;
+    color: #404040;
+
+    transform: none;
+}
+
 main {
     padding-top: 80px;
     margin-left:auto;
