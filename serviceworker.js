@@ -6,7 +6,7 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v20241212-0';
+const CACHE_VERSION = 'v20241213-0';
 // const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [
@@ -18,6 +18,7 @@ const ASSETS = [
     '/images/check.svg',
     '/images/loading.webp',
     '/styles/style.css',
+    '/styles/fonts/JetBrainsMono-Regular.woff2',
     '/scripts/ui-items.js',
     '/scripts/ui.js',
     '/scripts/updater.js',

@@ -174,7 +174,7 @@ main {
 .inputs:disabled {
     background: #000;
     border: 2px solid #202020;
-    color: #202020;
+    color: #404040;
 }
 
 .checkboxLabels {
@@ -219,12 +219,12 @@ main {
 }
 
 #showPassphrase2CheckboxLabel {
-    color: #202020;
+    color: #404040;
     pointer-events: none;
 }
 
 #showPasswordCheckboxLabel {
-    color: #202020;
+    color: #404040;
     pointer-events: none;
 }
 
@@ -289,10 +289,21 @@ main {
         0px 0px 0px 3px #202020 inset;
 }
 
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 #result {
     margin-top: 20px;
-    font-family: 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Menlo', 'Cascadia Mono Light', 'Ubuntu Mono', 'Consolas', monospace;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0;
     text-align: center;
+
+    padding: 6px;
 
     pointer-events: none;
     user-select: none;
@@ -396,7 +407,7 @@ main {
     background: #101010;
     border: 2px solid #202020;
     cursor: auto;
-    color: #202020;
+    color: #404040;
 
     transform: none;
     box-shadow: none;

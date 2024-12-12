@@ -32,7 +32,7 @@ const registerServiceWorker = async () => {
     }
 };
 
-registerServiceWorker();
+// registerServiceWorker();
 
 function updateServiceWorker(worker) {
     worker.postMessage({ type: 'SKIP_WAITING' });
