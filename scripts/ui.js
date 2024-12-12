@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase1Input.style.pointerEvents = 'none';
             showPassphrase1Checkbox.checked = false;
             showPassphrase1Checkbox.setAttribute('disabled', 'disabled');
-            showPassphrase1CheckboxLabel.style.color = '#202020';
+            showPassphrase1CheckboxLabel.style.color = '#404040';
             showPassphrase1CheckboxLabel.style.pointerEvents = 'none';
             nextButton.setAttribute('disabled', 'disabled');
             
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passphrase2Input.style.pointerEvents = 'none';
             showPassphrase2Checkbox.checked = false;
             showPassphrase2Checkbox.setAttribute('disabled', 'disabled');
-            showPassphrase2CheckboxLabel.style.color = '#202020';
+            showPassphrase2CheckboxLabel.style.color = '#404040';
             showPassphrase2CheckboxLabel.style.pointerEvents = 'none';
             confirmButton.setAttribute('disabled', 'disabled');
             
