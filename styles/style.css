@@ -179,7 +179,7 @@ main {
 }
 
 .checkboxLabels {
-    padding: 5px 5px 5px 0;
+    padding: 5px 0 5px 0;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -194,6 +194,7 @@ main {
     border-radius: 3px;
     box-shadow: 0px 0px 0px 2px #6a6a6a;
     background-color: #202020;
+    margin: 3px;
     
     transition: transform 50ms;
 }
@@ -240,7 +241,7 @@ main {
 
 .passwordLengthRadioLabels {
     margin-left: 25px;
-    padding: 5px 5px 5px 0;
+    padding: 5px 0 5px 0;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -255,8 +256,7 @@ main {
     border-radius: 50%;
     box-shadow: 0px 0px 0px 2px #6a6a6a;
     background-color: #202020;
-    vertical-align: top;
-    margin-right: 5px;
+    margin: 3px;
 
     transition: transform 50ms;
 }
