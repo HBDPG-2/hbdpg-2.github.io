@@ -164,8 +164,14 @@ main {
     border-radius: 10px;
     background-color: black;
     caret-color: #81b5f9;
-    padding: 8px;
+    padding: 7px;
     transition: box-shadow 500ms;
+}
+
+.inputs[type="password"] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
 }
 
 .inputs:focus {
@@ -297,7 +303,7 @@ main {
     src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 #result {
     margin-top: 20px;
@@ -306,12 +312,16 @@ main {
     font-feature-settings: "liga" 0, "clig" 0;
     text-align: center;
 
-    padding: 6px;
+    height: calc(1.2rem + 22px);
 
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+}
+
+#result[type="password"] {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #log {
