@@ -8,6 +8,7 @@
 
 * {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -238,9 +239,11 @@ main {
 }
 
 .passwordLengthRadioLabels {
-    display: inline-block;
     margin-left: 25px;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .passwordLengthRadioButtons {
