@@ -159,19 +159,19 @@ main {
     outline: none;
     box-sizing: border-box;
     width: 100%;
+    height: calc(1.2rem + 20px);
     font-size: 1.2rem;
     border: 2px solid #81b5f9;
     border-radius: 10px;
     background-color: black;
     caret-color: #81b5f9;
-    padding: 7px;
+    padding: 0 6px 0 6px;
     transition: box-shadow 500ms;
 }
 
 .inputs[type="password"] {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
-    line-height: 1.2;
 }
 
 .inputs:focus {
@@ -185,7 +185,7 @@ main {
 }
 
 .checkboxLabels {
-    padding: 5px 0 5px 0;
+    margin-top: 5px;
     display: inline-flex;
     align-items: center;
     gap: 5px;
