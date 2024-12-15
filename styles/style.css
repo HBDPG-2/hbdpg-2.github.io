@@ -161,12 +161,14 @@ main {
     width: 100%;
     /* height: calc(1.2rem + 22px); */
     font-size: 1.2rem;
+    margin-bottom: 5px;
     border: 2px solid #81b5f9;
     border-radius: 10px;
     background-color: black;
     caret-color: #81b5f9;
-    padding: 6px;
+    padding: 7px;
     transition: box-shadow 500ms;
+    
 }
 
 .inputs:focus {
@@ -180,7 +182,6 @@ main {
 }
 
 .checkboxLabels {
-    margin-top: 5px;
     display: inline-flex;
     align-items: center;
     gap: 5px;
