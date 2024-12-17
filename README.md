@@ -28,7 +28,7 @@
 
 ## About
 
-<p align="center"><img src="pictures/screenshots-mobile.png" alt="Screenshots"></p>
+<p align="center"><img src="pictures/ui-responsible-screenshots.png" alt="Screenshots"></p>
 
 **HBDPG-2** *(Hashing-based Deterministic Password Generator – 2nd Gen)* is a open-source, cross-platform Web-application for deterministic password generation with a focus on security and brute-force attack resistance. The application is designed to solve the problem of creating, remembering and storing strong passwords.
 
