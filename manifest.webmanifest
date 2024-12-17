@@ -102,7 +102,7 @@
     } ],
     "categories": [ "security" ],
     "screenshots": [ {
-        "src": "pictures/screenshot-desktop-1.png",
+        "src": "pictures/screenshot-desktop-1.webp",
         "sizes": "3628x2720",
         "type": "image/webp",
         "form_factor": "wide",
