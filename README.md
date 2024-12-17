@@ -13,10 +13,10 @@
 * [About](#about)
 * [Getting started](#getting-started)
     * [Run in browser](#run-in-browser)
-    * [Install application](#install-application-recommended) **(recommended)**
-    * [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) (for developers and advanced users)
+    * [Install application](#install-application-recommended) ***(recommended)***
+    * [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) *(for developers and advanced users)*
 * [Usage](#usage)
-* [Advanced features](#advanced-features)
+* [Settings](#settings)
     * [Password length](#password-length)
     * [Custom Character Tables](#custom-character-tables) *(will be added later)*
 * [Built-in security features](#built-in-security-features)
@@ -68,7 +68,7 @@ You can install HBDPG-2 as Progressive Web App to have quick access from your Ho
     * On Android (Chrome): `Menu` => `Add to Home screen` => `Install`
 3. Now you can use HBDPG-2 without opening your browser!
 
-### Run locally via Live Server (for developers and advanced users)
+### Run locally via Live Server *(for developers and advanced users)*
 
 HBDPG-2 uses WebAssembly, which does not work if you just open `index.html` as a file in the browser. If you want to run HBDPG-2 locally, follow these steps:
 
@@ -88,7 +88,7 @@ Probably, Content Security Policy will interfere with locally running. If you en
 
 ## Usage
 
-To generate a password, you must use two passphrases that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "Advanced features" to enhance security.
+To generate a password, you must use two passphrases that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "[Settings](#settings)" to enhance security and castomize your result.
 
 Generation is resource-intensive process that takes up to 15 seconds on average, but on some low-performance devices it can take a few minutes.
 
@@ -96,7 +96,7 @@ After using the generated password, **click the `Clear` button** so that your pa
 
 
 
-## Advanced features
+## Settings
 
 **Warning!** Changing these parameters affects the generation! **Remember your changes** to get the same password next time.
 
@@ -129,7 +129,7 @@ You can choose the password length from three types:
 
 The main risk of using HBDPG-2 is the ability of an attacker to brute-force simple and popular passphrases to find out your password.
 
-**Do not use weak and short passphrases!**
+**Do not use weak and short passphrases!** For optimal security, use **two distinct passphrases**. This helps ensure that even if one passphrase is compromised, your generated password remain secure. Try to choose phrases that are memorable but unique to you.
 
 **Do not use HBDPG-2 on untrusted or compromised devices!**
 
