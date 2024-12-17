@@ -103,32 +103,32 @@
     "categories": [ "security" ],
     "screenshots": [ {
         "src": "pictures/screenshot-desktop-1.png",
-        "sizes": "2200x1700",
-        "type": "image/png",
+        "sizes": "3628x2720",
+        "type": "image/webp",
         "form_factor": "wide",
-        "label": "Create and remember two different passphrases."
+        "label": "Use two distinct passphrases, choose password length you need."
     }, {
-        "src": "pictures/screenshot-desktop-2.png",
-        "sizes": "2200x1700",
-        "type": "image/png",
+        "src": "pictures/screenshot-desktop-2.webp",
+        "sizes": "3628x2720",
+        "type": "image/webp",
         "form_factor": "wide",
         "label": "Generate your strong password!"
     }, {
-        "src": "pictures/screenshot-mobile-1.png",
-        "sizes": "1170x2300",
-        "type": "image/png",
+        "src": "pictures/screenshot-mobile-1.webp",
+        "sizes": "2060x3448",
+        "type": "image/webp",
         "form_factor": "narrow",
-        "label": "Create and remember two different passphrases."
+        "label": "Use two distinct passphrases."
     }, {
-        "src": "pictures/screenshot-mobile-2.png",
-        "sizes": "1170x2300",
-        "type": "image/png",
+        "src": "pictures/screenshot-mobile-2.webp",
+        "sizes": "2060x3448",
+        "type": "image/webp",
         "form_factor": "narrow",
         "label": "Choose password length you need."
     }, {
-        "src": "pictures/screenshot-mobile-3.png",
-        "sizes": "1170x2300",
-        "type": "image/png",
+        "src": "pictures/screenshot-mobile-3.webp",
+        "sizes": "2060x3448",
+        "type": "image/webp",
         "form_factor": "narrow",
         "label": "Generate your strong password!"
     } ]
