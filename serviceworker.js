@@ -6,7 +6,7 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v20241217-0';
+const CACHE_VERSION = 'v20241217-1';
 // const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [
