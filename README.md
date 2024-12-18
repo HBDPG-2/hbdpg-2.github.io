@@ -55,7 +55,7 @@ Please choose **one** of the following usage options:
 
 You can use HBDPG-2 via browser by following this link: https://hbdpg-2.github.io/
 
-### Install application (recommended)
+### Install application *(recommended)*
 
 <p align="center"><img src="pictures/screenshot-desktop-installation.png" alt="Installation"></p>
 
