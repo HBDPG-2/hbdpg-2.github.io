@@ -6,7 +6,7 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v20241218-0';
+const CACHE_VERSION = 'v20241220-0';
 // const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [
@@ -14,8 +14,8 @@ const ASSETS = [
     '/index.html',
     '/manifest.webmanifest',
     '/favicon.ico',
-    '/images/Logo-beta.webp',
-    '/images/Logo-dev.webp',
+    '/images/logo-beta.webp',
+    '/images/logo-dev.webp',
     '/images/check.svg',
     '/images/loading.webp',
     '/styles/style.css',
