@@ -70,10 +70,9 @@ header {
     -webkit-backdrop-filter: blur(25px);
 }
 
-#Logo {
-    height: 100px;
+#logo {
+    height: 80px;
     display: block;
-    margin-top: -10px;
     margin-left: auto;
     margin-right: auto;
     pointer-events: none;
