@@ -26,6 +26,7 @@ const clearButton = document.getElementById('clearButton');
 const generateNote = document.getElementById('generateNote');
 const clearClipboardCheckbox = document.getElementById('clearClipboardCheckbox');
 const clearClipboardCheckboxLabel = document.getElementById('clearClipboardCheckboxLabel');
+const resultContainer = document.getElementById('resultContainer');
 const result = document.getElementById('result');
 const timeCount = document.getElementById('timeCount');
 const entropyCount = document.getElementById('entropyCount');
