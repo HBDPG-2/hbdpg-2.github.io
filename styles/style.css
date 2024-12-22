@@ -309,19 +309,22 @@ main {
     overflow-y: hidden;
     overflow-x: auto;
     white-space: nowrap;
-    width: 100%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     box-sizing: border-box;
+    text-align: center;
     width: 100%;
-    height: calc(1.2rem + 22px);
     margin-bottom: 5px;
     border: 2px solid #202020;
     border-radius: 10px;
     background-color: black;
-    padding: 5px;
     transition: box-shadow 500ms;
+}
 
-    text-align: center;
+#resultContainer::-webkit-scrollbar {
+    display: none;
 }
 
 #result {
@@ -332,15 +335,17 @@ main {
     background: none;
     border: none;
     outline: none;
-    width: 1ch;
+    width: 0ch;
     color: white;
+
+    height: calc(1.2rem + 18px);
 
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
 
-    padding: 0 4px;
+    padding: 0 9px;
 }
 
 @supports (font: -apple-system-body) {
