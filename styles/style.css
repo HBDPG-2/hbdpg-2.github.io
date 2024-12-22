@@ -167,7 +167,6 @@ main {
     caret-color: #81b5f9;
     padding: 7px;
     transition: box-shadow 500ms;
-    
 }
 
 .inputs:focus {
@@ -306,21 +305,42 @@ main {
     font-style: normal;
 }
 
+#resultContainer {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(1.2rem + 22px);
+    margin-bottom: 5px;
+    border: 2px solid #202020;
+    border-radius: 10px;
+    background-color: black;
+    padding: 5px;
+    transition: box-shadow 500ms;
+
+    text-align: center;
+}
+
 #result {
-    margin-top: 20px;
+    font-size: 1.2rem;
     font-family: 'JetBrains Mono', 'Menlo', 'Cascadia Mono Light', 'Ubuntu Mono', 'Consolas', monospace;
     font-variant-ligatures: none;
     font-feature-settings: "liga" 0, "clig" 0;
-    text-align: center;
-
-    height: calc(1.2rem + 22px);
+    background: none;
+    border: none;
+    outline: none;
+    width: 1ch;
+    color: white;
 
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
 
-    padding: 0 9px;
+    padding: 0 4px;
 }
 
 @supports (font: -apple-system-body) {

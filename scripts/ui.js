@@ -161,14 +161,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     core.onmessage = function(event) {
         if (event.data.status === 'Successful') {
+            result.style.width = `${event.data.result.password.length}ch`;
             result.value = event.data.result.password;
             timeCount.innerHTML = `${event.data.result.elapsedTime.toFixed(3)} s`;
             entropyCount.innerHTML = `${event.data.result.entropy.toFixed(2)} bits`;
 
             result.removeAttribute('disabled');
             result.setAttribute('readonly', true);
-            result.style.border = '2px solid #81b5f9';
-            result.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
+            resultContainer.style.border = '2px solid #81b5f9';
+            resultContainer.style.boxShadow = '0px 0px 25px rgba(179, 71, 230, 0.8)';
             generateButton.innerHTML = '<b>Generated</b>';
             generateNote.style.visibility = 'hidden';
             showPasswordCheckbox.removeAttribute('disabled');
