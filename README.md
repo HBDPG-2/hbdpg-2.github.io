@@ -10,19 +10,19 @@
 
 ## Contents
 
-* [About](#about)
-* [Getting started](#getting-started)
-    * [Run in browser](#run-in-browser)
-    * [Install application](#install-application-recommended) ***(recommended)***
-    * [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) *(for developers and advanced users)*
-* [Usage](#usage)
-* [Settings](#settings)
-    * [Password length](#password-length)
-    * [Custom Character Tables](#custom-character-tables) *(will be added later)*
-* [Built-in security features](#built-in-security-features)
-* [Risks and Recommendations](#risks-and-recommendations)
-* [Feedback](#feedback)
-* [Used sources](#used-sources)
+- [About](#about)
+- [Getting started](#getting-started)
+    - [Run in browser](#run-in-browser)
+    - [Install application](#install-application-recommended) ***(recommended)***
+    - [Run locally via Live Server](#run-locally-via-live-server-for-developers-and-advanced-users) *(for developers and advanced users)*
+- [Usage](#usage)
+- [Settings](#settings)
+    - [Password length](#password-length)
+    - [Custom Character Tables](#custom-character-tables) *(will be added later)*
+- [Built-in security features](#built-in-security-features)
+- [Risks and Recommendations](#risks-and-recommendations)
+- [Feedback](#feedback)
+- [Credits](#credits)
 
 
 
@@ -30,7 +30,7 @@
 
 <p align="center"><img src="pictures/ui-responsible-screenshots.png" alt="Screenshots"></p>
 
-**HBDPG-2** *(Hashing-based Deterministic Password Generator – 2nd Gen)* is an open-source, cross-platform Web-application for deterministic password generation with a focus on security and brute-force attack resistance. The application is designed to solve the problem of creating, remembering and storing strong passwords.
+**HBDPG-2** *(Hashing-based Deterministic Password Generator – 2nd Gen)* is an open-source, cross-platform Web-application for deterministic password generation with a focus on security and brute-force attack resistance. The application is designed to solve the problem of creating, remembering and storing strong passwords. The HBDPG-2 Core is based on [Argon2id](https://github.com/P-H-C/phc-winner-argon2).
 
 Password generation is performed **offline on the user's device**. User secrets (passphrases, passwords, other sensitive data) are not transmitted to servers. The generated password is 32 characters long (by default) and contains uppercase letters, lowercase letters, numbers, and symbols. This meets **all modern password standards**.
 
@@ -45,9 +45,9 @@ With HBDPG-2, **you don't have to save and remember your passwords**, making the
 ## Getting started
 
 **To use HBDPG-2 you will need:**
-* Device with any OS *(tested on Windows, macOS, iOS, Android)*
-* Any browser of the current version *(tested on Chrome, Safari, Firefox, Edge)*
-* 500 MB of RAM
+- Device with any OS *(tested on Windows, macOS, Linux, iOS, Android)*
+- Any browser of the current version *(tested on Chrome, Safari, Edge, Firefox)*
+- 400 MB of RAM
 
 Please choose **one** of the following usage options:
 
@@ -63,9 +63,9 @@ You can install HBDPG-2 as Progressive Web App to have quick access from your Ho
 
 1. Open https://hbdpg-2.github.io/ in your browser.
 2. In the browser menu, choose `Install HBDPG-2`:
-    * On MacOS (Safari): `File` => `Add to Dock...`
-    * On iOS (Safari): `Share` => `Add to Home Screen`
-    * On Android (Chrome): `Menu` => `Add to Home screen` => `Install`
+    - On MacOS (Safari): `File` => `Add to Dock...`
+    - On iOS (Safari): `Share` => `Add to Home Screen`
+    - On Android (Chrome): `Menu` => `Add to Home screen` => `Install`
 3. Now you can use HBDPG-2 without opening your browser!
 
 ### Run locally via Live Server *(for developers and advanced users)*
@@ -88,7 +88,7 @@ Probably, Content Security Policy will interfere with locally running. If you en
 
 ## Usage
 
-To generate a password, you must use two passphrases that are at least 8 characters long. **Use strong passphrases** to make brute-force attacks more difficult. You can also use "[Settings](#settings)" to enhance security and castomize your result.
+To generate a password, you must use two passphrases that are at least 8 characters long. **Use two different strong passphrases** to make brute-force attacks more difficult. You can also use "[Settings](#settings)" to enhance security and castomize your result.
 
 Generation is resource-intensive process that takes up to 15 seconds on average, but on some low-performance devices it can take a few minutes.
 
@@ -103,9 +103,9 @@ After using the generated password, **click the `Clear` button** so that your pa
 ### Password length
 
 You can choose the password length from three types:
-* **Lite** – 16 characters *(minimum length recommended by CISA)*
-* **Standard** – 32 characters *(default)*
-* **Ultra** – 64 characters *(enhanced security)*
+- **Lite** – 16 characters *(minimum length recommended by CISA)*
+- **Standard** – 32 characters *(default)*
+- **Ultra** – 64 characters *(enhanced security)*
 
 ### Custom Character Tables
 
@@ -115,13 +115,13 @@ You can choose the password length from three types:
 
 ## Built-in security features
 
-* **High device performance requirements** reduce generation speed and make brute-force attacks longer and more resource-intensive.
+- **High device performance requirements** reduce generation speed and make brute-force attacks longer and more resource-intensive.
 
-* **Using two different passphrases** to generate passwords significantly increases the possible number of combinations and make brute-force attacks more difficult.
+- **Using two different passphrases** to generate passwords significantly increases the possible number of combinations and make brute-force attacks more difficult.
 
-* **Reversibility Protection** prevents the generated hash and passphrases from being revealed if your password is compromised.
+- **Reversibility Protection** prevents the generated hash and passphrases from being revealed if your password is compromised.
 
-* **Result Checking** ensures that the generated password meets all security requirements and standards.
+- **Result Checking** ensures that the generated password meets all security requirements and standards.
 
 
 
@@ -151,9 +151,15 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 
 
-## Used sources
+## Credits
 
-* [argon2-browser](https://github.com/antelle/argon2-browser) (commit d73916b)
+**Main Developer:** [Piotr Kniaz](https://github.com/Piotr-Kniaz)
+
+**Used Resources:**
+
+- [argon2-browser](https://github.com/antelle/argon2-browser) by Dimitri Witkowski (commit d73916b)
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) by JetBrains (v2.304)
+- Christmas Hat by [Freepik](https://www.freepik.com)
 
 
 
