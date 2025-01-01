@@ -1,4 +1,4 @@
-/*  (c) 2024 Piotr Kniaz
+/*  Copyright (C) 2024-2025 Piotr Kniaz
 
     This file is part of HBDPG-2.
     Repository: https://github.com/HBDPG-2/hbdpg-2.github.io

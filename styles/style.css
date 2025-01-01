@@ -1,4 +1,4 @@
-/*  (c) 2024 Piotr Kniaz
+/*  Copyright (C) 2024-2025 Piotr Kniaz
 
     This file is part of HBDPG-2.
     Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
@@ -600,19 +600,22 @@ main {
 }
 
 footer {
-    left: 0;
-    right: 0;
     bottom: 0;
     height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     border-top: solid 2px #202020;
+    border-radius: 20px 20px 0 0;
 
-    padding-top: 20px;
-    margin-top: 30px;
+    padding-top: 10px;
+    margin-top: 20px;
 
     text-align: center;
+    line-height: 1.4;
     color: #a0a0a0;
 }
 
-#GitHubLink {
+.links {
     color: #9589f0;
 }
