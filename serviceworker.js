@@ -1,4 +1,4 @@
-/*  (c) 2024 Piotr Kniaz
+/*  Copyright (C) 2024-2025 Piotr Kniaz
 
     This file is part of HBDPG-2.
     Repository: https://github.com/HBDPG-2/hbdpg-2.github.io
@@ -6,7 +6,7 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
-const CACHE_VERSION = 'v20241228-0';
+const CACHE_VERSION = 'v20250101-0';
 // const CACHE_VERSION = 'v1-debug';
 
 const ASSETS = [

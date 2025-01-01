@@ -167,4 +167,4 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 <p align="center"><a href="https://github.com/HBDPG-2/hbdpg-2.github.io/blob/master/LICENSE">MIT License</a></p>
 
-<p align="center">© 2024 Piotr Kniaz</p>
+<p align="center">© 2024-2025 Piotr Kniaz</p>
