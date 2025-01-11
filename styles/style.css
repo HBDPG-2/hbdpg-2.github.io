@@ -125,6 +125,7 @@ main {
 
     background: linear-gradient(65deg, #b347e6, #81b5f9);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
