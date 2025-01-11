@@ -159,7 +159,7 @@ If you have discovered a vulnerability, please read the [Security Policy](https:
 
 - [argon2-browser](https://github.com/antelle/argon2-browser) by Dimitri Witkowski (commit d73916b)
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) by JetBrains (v2.304)
-- Christmas Hat by [Freepik](https://www.freepik.com)
+<!-- - Christmas Hat by [Freepik](https://www.freepik.com) -->
 
 
 
