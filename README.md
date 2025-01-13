@@ -147,7 +147,7 @@ You can give feedback, ask a question or suggest an improvement on [this page](h
 
 If you find a bug, you can report it on [this page](https://github.com/HBDPG-2/hbdpg-2.github.io/issues).
 
-If you have discovered a vulnerability, please read the [Security Policy](https://github.com/HBDPG-2/hbdpg-2.github.io/security) and report the issue **privately!**
+If you have discovered a vulnerability, please read the [Security Policy](https://github.com/HBDPG-2/hbdpg-2.github.io/security/policy) and report the issue **privately!**
 
 
 
