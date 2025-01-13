@@ -6,6 +6,8 @@
     Licensed under the MIT License. See LICENSE file in the project root for details.
 */
 
+// Core version: 1.0-beta
+
 importScripts('argon2.js');
 
 let passphrase1 = null;
@@ -63,7 +65,7 @@ function generate() {
             if (password !== null) {
                 resolve({password, entropy, elapsedTime});
             } else {
-                reject('Failed to generate secure password. Try other passphrases or password length.');
+                reject('Failed to generate secure password. Try another passphrases or password length.');
             }
         }).catch(error => {
             reject(error);
@@ -76,8 +78,8 @@ function generate() {
 function getPassword(hash) {
     let hashNibbles = bytesToNibbles(hash.hash);
 
-    for (let i = 0; i < 16; i++) {
-        let indexes = getIndexes(hashNibbles, 16, i);
+    for (let attempt = 0; attempt < 16; attempt++) {
+        let indexes = getIndexes(hashNibbles, 16, attempt);
         let password = getCharacters(indexes);
         
         if (checkResult(password) === true) {
