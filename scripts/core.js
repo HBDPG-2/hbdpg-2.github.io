@@ -79,7 +79,7 @@ function getPassword(hash) {
     let hashNibbles = bytesToNibbles(hash.hash);
 
     for (let attempt = 0; attempt < 16; attempt++) {
-        let indexes = getIndexes(hashNibbles, 16, attempt);
+        let indexes = getIndexes(hashNibbles, attempt);
         let password = getCharacters(indexes);
         
         if (checkResult(password) === true) {
@@ -105,10 +105,9 @@ function bytesToNibbles(bytes) {
     return nibbles;
 }
 
-function getIndexes(hashNibbles, blockSize, shift) {
-    let indexes = [];
-    indexes[0] = [];
-    indexes[1] = [];
+function getIndexes(hashNibbles, shift) {
+    const blockSize = 16;
+    let indexes = [[], []];
 
     for(let i = 0 + shift, j = 0; i < hashNibbles.length; i += blockSize, j++) {
         let blockSum = 0;
